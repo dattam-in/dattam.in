@@ -20,7 +20,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title      : Dattam
 email      : contact@dattam.in #this is also the email contact forms will go to
 description: "Dattam is a leading IT company in India. We are providing IT services and solutions to our clients across the globe. We are providing IT services and solutions to our clients across the globe."
-author     : Your Name
+author     : Dattam
 # logo:     #optional, defaults to site title
   # path: assets\img\clients\creative-market.jpg
   # height: 60 #height in px, defaults to 52px
