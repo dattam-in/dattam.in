@@ -5,8 +5,9 @@ gem "jekyll-remote-theme"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
-  gem "github-pages"
 end
+
+gem 'github-pages', group: :jekyll_plugins
 
 # Uncomment the following line if developing on Windows: 
 # Performance-booster for watching directories on Windows
