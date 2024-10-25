@@ -21,125 +21,40 @@ en: &DEFAULT_EN
     text: "List of services we provide"
     section: services
     list:
-      - title: "Backend Development"
+      - title: Public Data Analysis
+        desc: We help organizations collect, analyze, and visualize public data to gain insights and make informed decisions. Our data analysis services include data collection, cleaning, transformation, and visualization.
+        icon: fas fa-magnifying-glass-chart
+      - title: "Web Application Development"
         desc: "We specialize in building robust backend systems that power your applications. Our team of experienced developers utilizes the latest technologies to create scalable, secure, and high-performance backend solutions, ensuring seamless integration with your frontend interfaces."
         icon: fas fa-code #find more at https://fontawesome.com/icons
-      - title: "Cloud Solutions"
-        desc: "Our cloud services help you harness the full potential of cloud technology. Whether you are looking to migrate to the cloud, optimize your existing infrastructure, or develop cloud-native applications, we have the expertise to guide you."
-        icon: fas fa-cloud
       - title: "Devops Services"
-        desc: "Transform your development process with our DevOps services. We integrate development and operations to enhance collaboration, automate processes, and accelerate delivery."
-        icon: fas fa-laptop
+        desc: "Transform your development process by setting up automated pipelines, continuous integration, and continuous deployment. Optimize cloud architecture to be performant, resilient, and cost-effective."
+        icon: fas fa-cloud
 
-  portfolio:
-    title: "Portfolio"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    section: portfolio
-    closebutton: "Close Project"
-
-  timeline:
-    title: "Timeline"
-    text: "Lorem ipsum timeline"
-    section: timeline
-    # left is the default
-    #start_align: "left"
-    events:
-      - title: "Our Humble Beginnings"
-        year: "2009-2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/1.jpg
-        alt:
-      - title: "An Agency is Born"
-        year: "March 2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/2.jpg
-        alt:
-      - title: "Jekyll Theme is created"
-        year: "2019"
-        desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
-        image: assets/img/timeline/3.jpg
-        alt: image alt text
-      - title: "Title"
-        year: "2009-2011"
-        desc: "Your description here, **Markdown** is fully supported."
-        image: assets/img/timeline/4.jpg
-        alt:
-        # you can enforce the alignment
-        align: right
-    end: "Be Part <br> of Our <br> Story!"
 
   about:
     title: "About Us"
     text: ""
-    body: "At Datam Labs, we are a team of dedicated professionals passionate about technology and innovation. Founded in 2024, we specialize in providing top-notch backend development, cloud solutions, and DevOps services to businesses of all sizes. Our mission is to empower organizations to achieve their goals through advanced technology and seamless integration."
+    body: "At Datam Labs, we are a team of dedicated professionals passionate about technology and innovation. Founded in 2024, we specialize in providing top-notch Open data, Web application development, DevOps services. Our mission is to empower organizations to achieve their goals through advanced technology and seamless integration. We believe in the concept of bartering(oldest form of commerce) where everyone involved has something to gain. We are committed to providing the best services to our clients and partners, ensuring that they achieve their desired outcomes. We are always looking for new opportunities to collaborate with like-minded individuals and organizations. If you are interested in working with us, please get in touch."
     section: about
 
   clients:
     section: clients
     max-height: 100px
-    horizontal-scrolling: "" #"yes/no"
+    horizontal-scrolling: "yes"
     list:
       - title: "chartr"
-        url: https://github.com/raviriley/agency-jekyll-theme
+        url: https://chartr.in/
         logo: assets/img/clients/chartr_logo.jpg
       - title: "pradhi"
-        url: https://github.com/raviriley/agency-jekyll-theme
+        url: https://pradhi.ai/
         logo: assets/img/clients/pradhilogo.jpg
       - title: "ceew"
-        url: https://github.com/raviriley/agency-jekyll-theme
+        url: https://www.ceew.in/
         logo: assets/img/clients/ceew.jpg
-
-  team:
-    title: "OUR AMAZING TEAM"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
-    section: team
-    people:
-      - name: "Kay Garland"
-        role: "Lead Designer"
-        image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
-      - name: "Larry Parker"
-        role: "Lead Marketer"
-        image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
-      - name: "Diana Perterson"
-        role: "Lead Developer"
-        image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
-
-  contact:
-    title: "Contact Us"
-    text: "Lorem ipsum or call 123456789"
-    section: contact
-    name: "Name*"
-    name-validation: "Please enter your name."
-    email: "Email*"
-    email-validation: "Please enter your email address."
-    phone: "Phone Number"
-    phone-validation: "Please enter your phone number."
-    message: "Message*"
-    message-validation: "Please enter a message."
-    subject: "Contact Form Submission"
-    submit: "Send Message"
+      - title: "USAID"
+        url: https://www.usaid.gov/
+        logo: https://www.usaid.gov/themes/custom/uswds_usaid/logo-overlay.svg
 
   footer:
     legal: "Privacy Policy"
