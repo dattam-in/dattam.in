@@ -18,12 +18,12 @@ en: &DEFAULT_EN
 
   services:
     title: "Services"
-    text: "List of services we provide"
+    text: "Where we can help"
     section: services
     list:
       - title: Public Data Analysis
         desc: We help organizations collect, analyze, and visualize public data to gain insights and make informed decisions. Our data analysis services include data collection, cleaning, transformation, and visualization.
-        icon: fas fa-magnifying-glass-chart
+        icon: fa fa-magnifying-glass-chart
       - title: "Application Development"
         desc: "We specialize in building robust backend systems that power your applications. Our team of experienced developers utilizes the latest technologies to create scalable, secure, and high-performance backend solutions, ensuring seamless integration with your frontend interfaces."
         icon: fas fa-code #find more at https://fontawesome.com/icons
