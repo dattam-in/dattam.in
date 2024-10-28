@@ -23,7 +23,7 @@ en: &DEFAULT_EN
     list:
       - title: Public Data Analysis
         desc: We help organizations collect, analyze, and visualize public data to gain insights and make informed decisions. Our data analysis services include data collection, cleaning, transformation, and visualization.
-        icon: fa fa-magnifying-glass-chart
+        icon: fas fa-chart-bar
       - title: "Application Development"
         desc: "We specialize in building robust backend systems that power your applications. Our team of experienced developers utilizes the latest technologies to create scalable, secure, and high-performance backend solutions, ensuring seamless integration with your frontend interfaces."
         icon: fas fa-code #find more at https://fontawesome.com/icons
@@ -41,7 +41,7 @@ en: &DEFAULT_EN
   clients:
     section: clients
     max-height: 100px
-    horizontal-scrolling: "yes"
+    horizontal-scrolling: ""
     list:
       - title: "chartr"
         url: https://chartr.in/
@@ -60,7 +60,7 @@ en: &DEFAULT_EN
     legal: "Privacy Policy"
     social:
       - url: mailto:contact@dattam.in 
-        icon: "fab fa-envelope"
+        icon: "fa fa-envelope"
       - url: https://www.linkedin.com/company/dattam-in
         icon: "fab fa-linkedin-in"
       - url: https://github.com/dattam-in
