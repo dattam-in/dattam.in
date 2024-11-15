@@ -35,7 +35,7 @@ en: &DEFAULT_EN
   about:
     title: "About Us"
     text: ""
-    body: "At Datam Labs, we are a team of dedicated professionals passionate about technology and innovation. We specialize in providing top-notch services in the area of Open data, Web application development and DevOps services. Our mission is to empower organizations to achieve their goals through advanced technology and seamless integration.\n\n We believe in the concept of bartering(the oldest form of commerce) where everyone involved has something to gain. We are committed to providing the best services to our clients and partners, ensuring that they achieve their desired outcomes. We are always looking for new opportunities to collaborate with like-minded individuals and organizations. If you are interested in working with us, please get in touch."
+    body: "At Dattam Labs, we are a team of dedicated professionals passionate about technology and innovation. We specialize in providing top-notch services in the area of Open data, Web application development and DevOps services. Our mission is to empower organizations to achieve their goals through advanced technology and seamless integration.\n\n We believe in the concept of bartering(the oldest form of commerce) where everyone involved has something to gain. We are committed to providing the best services to our clients and partners, ensuring that they achieve their desired outcomes. We are always looking for new opportunities to collaborate with like-minded individuals and organizations. If you are interested in working with us, please get in touch."
     section: about
 
   clients:
@@ -54,7 +54,7 @@ en: &DEFAULT_EN
         logo: assets/img/clients/ceew.jpg
       - title: "USAID"
         url: https://www.usaid.gov/
-        logo: https://www.usaid.gov/themes/custom/uswds_usaid/logo-overlay.svg
+        logo: assets/img/clients/usaid.png
 
   footer:
     legal: "Privacy Policy"
