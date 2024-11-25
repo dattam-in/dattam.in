@@ -24,12 +24,15 @@ en: &DEFAULT_EN
       - title: Public Data Analysis
         desc: We help organizations collect, analyze, and visualize public data to gain insights and make informed decisions. Our data analysis services include data collection, cleaning, transformation, and visualization.
         icon: fas fa-chart-bar
-      - title: "Application Development"
-        desc: "We specialize in building robust backend systems that power your applications. Our team of experienced developers utilizes the latest technologies to create scalable, secure, and high-performance backend solutions, ensuring seamless integration with your frontend interfaces."
-        icon: fas fa-code #find more at https://fontawesome.com/icons
+      - title: AI/ML powered knowledge systems
+        desc: "We build AI/ML powered knowledge systems that help organizations make sense of various types of data including unstructured data, leveraging the capabilities of LLMs and Information retrieval systems to provide easy-to-use interfaces for users to interact with the data."
+        icon: fas fa-brain
       - title: "Devops Services"
         desc: "Transform your development process by setting up automated pipelines, continuous integration, and continuous deployment. Optimize cloud architecture to be performant, resilient, and cost-effective."
         icon: fas fa-cloud
+      - title: "Application Development"
+        desc: "We specialize in building robust web applications. Our team of experienced developers utilize the latest technologies to create scalable, secure, and high-performance cloud native solutions that require little to no maintenance"
+        icon: fas fa-code #find more at https://fontawesome.com/icons
 
 
   about:
