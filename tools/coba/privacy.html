@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - coba Extension</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+
+        .last-updated {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .highlight {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Privacy Policy for coba</h1>
+    <p class="last-updated">Last Updated: December 12, 2025</p>
+
+    <div class="highlight">
+        <strong>TL;DR:</strong> We only capture captcha images, send them to our server for solving, and don't store
+        anything permanently. No personal data is collected.
+    </div>
+
+    <h2>1. Information We Collect</h2>
+    <p>The coba extension collects the following data:</p>
+    <ul>
+        <li><strong>Captcha Images:</strong> Only the captcha images displayed on e-Courts websites are captured and
+            sent to our server for processing.</li>
+        <li><strong>IP Addresses:</strong> Your IP address may be temporarily logged in our server logs for operational
+            and security purposes (e.g., preventing abuse). These logs are automatically deleted after 7 days.</li>
+        <li><strong>No Personal Data:</strong> We do not collect, access, or store any personal information, browsing
+            history, cookies, or login credentials.</li>
+    </ul>
+
+    <h2>2. How We Use Your Data</h2>
+    <p>The data is used solely for the following purposes:</p>
+    <ul>
+        <li><strong>Captcha Images:</strong> Sent to our cloud-based API (hosted on AWS Lambda) to solve the captcha
+            using machine learning.</li>
+        <li><strong>IP Addresses:</strong> Used only for monitoring server health, preventing abuse, and troubleshooting
+            errors. Not used for tracking or analytics.</li>
+        <li>The solved text is returned to your browser and automatically filled into the captcha input field.</li>
+    </ul>
+
+    <h2>3. Data Storage and Retention</h2>
+    <ul>
+        <li><strong>No Permanent Storage:</strong> Captcha images are processed in real-time and are <strong>not
+                stored</strong> on our servers or any database.</li>
+        <li><strong>Server Logs:</strong> IP addresses and request metadata may be temporarily logged in AWS CloudWatch
+            for up to 7 days for operational purposes, then automatically deleted.</li>
+        <li><strong>Temporary Processing:</strong> Images exist only in memory during API processing and are immediately
+            discarded after the response is sent.</li>
+    </ul>
+
+    <h2>4. Data Sharing</h2>
+    <p>Your data is shared with the following parties:</p>
+    <ul>
+        <li><strong>AWS Lambda:</strong> Captcha images are sent to our server hosted on Amazon Web Services (AWS)
+            Lambda for processing. AWS may temporarily process the data as part of their infrastructure but does not
+            store or access it beyond standard logging.</li>
+        <li><strong>No Third Parties:</strong> We do not sell, rent, or share your data with any third-party services,
+            advertisers, or analytics providers.</li>
+    </ul>
+
+    <h2>5. Security</h2>
+    <p>We take security seriously:</p>
+    <ul>
+        <li>All data transmission between the extension and our server uses <strong>HTTPS encryption</strong>.</li>
+        <li>Our server is configured to reject unauthorized requests.</li>
+        <li>No data is persisted beyond the processing lifecycle, except for temporary server logs (automatically
+            deleted after 7 days).</li>
+    </ul>
+
+    <h2>6. Permissions</h2>
+    <p>The extension requests the following Chrome permissions:</p>
+    <ul>
+        <li><strong>Host Permissions:</strong> Access to <code>*.ecourts.gov.in</code>, <code>*.dcourts.gov.in</code>,
+            and <code>*.keralacourts.in</code> to detect and solve captchas on these sites only.</li>
+        <li><strong>No Broad Permissions:</strong> The extension does not request access to all websites or browsing
+            data.</li>
+    </ul>
+
+    <h2>7. User Rights</h2>
+    <p>You have the following rights:</p>
+    <ul>
+        <li><strong>Opt-Out:</strong> You can disable or uninstall the extension at any time from
+            <code>chrome://extensions/</code>.
+        </li>
+        <li><strong>Data Deletion:</strong> Since we don't store permanent data, there is nothing to delete. Server logs
+            are automatically purged after 7 days.</li>
+    </ul>
+
+    <h2>8. Children's Privacy</h2>
+    <p>This extension is not intended for use by children under the age of 13. We do not knowingly collect data from
+        children.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated
+        "Last Updated" date.</p>
+
+    <hr style="margin-top: 50px;">
+    <p style="text-align: center; color: #7f8c8d;">
+        © 2025 coba. All rights reserved.
+    </p>
+</body>
+
+</html>
