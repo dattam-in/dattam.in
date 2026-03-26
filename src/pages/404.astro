@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SimpleHeader from '../components/SimpleHeader.astro';
+---
+
+<BaseLayout title="Page Not Found — Dattam Labs">
+  <SimpleHeader />
+  <main class="pt-24 pb-16 px-6 min-h-[60vh] flex items-center justify-center">
+    <div class="text-center">
+      <h1 class="text-6xl font-bold text-gray-300 mb-4">404</h1>
+      <p class="text-xl text-gray-600 mb-8">The requested page could not be found.</p>
+      <a href="/" class="btn-primary">Back to Home</a>
+    </div>
+  </main>
+</BaseLayout>

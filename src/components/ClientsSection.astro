@@ -1,0 +1,28 @@
+---
+const clients = [
+  { name: 'Chartr', logo: '/clients/chartr_logo.jpg', url: 'https://chartr.in/' },
+  { name: 'Pradhi', logo: '/clients/pradhilogo.jpg', url: 'https://pradhi.ai/' },
+  { name: 'CEEW', logo: '/clients/ceewlogo.jpg', url: 'https://www.ceew.in/' },
+  { name: 'StarTech365', logo: '/clients/startechlogo.png', url: 'https://startech365.net/' },
+];
+---
+
+<section id="clients" class="py-20 px-6 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="section-label mb-3 inline-block">Trusted By</span>
+      <h2 class="text-3xl font-bold">Our Clients</h2>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-12 md:gap-16 max-w-4xl mx-auto">
+      {clients.map((client) => (
+        <a href={client.url} target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center p-4">
+          <img
+            src={client.logo}
+            alt={client.name}
+            class="max-h-[70px] w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

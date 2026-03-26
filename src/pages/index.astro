@@ -1,0 +1,52 @@
+---
+import { SITE_URL } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ProductsSection from '../components/ProductsSection.astro';
+import ClientsSection from '../components/ClientsSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Dattam Labs',
+      url: SITE_URL,
+      email: 'contact@dattam.in',
+      description: 'Dattam is a leading IT company in India providing services in data analysis, AI/ML, DevOps, and application development.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Awfis, Prestige Skytech, ISB Rd, Financial District, Nanakramguda',
+        addressLocality: 'Hyderabad',
+        addressRegion: 'Telangana',
+        postalCode: '500032',
+        addressCountry: 'IN',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Dattam Labs',
+      url: SITE_URL,
+    },
+  ],
+};
+---
+
+<BaseLayout title="Dattam Labs — Data-driven IT Solutions">
+  <Header />
+  <main>
+    <Hero />
+    <ServicesSection />
+    <ProductsSection />
+    <AboutSection />
+    <ClientsSection />
+    <ContactSection />
+  </main>
+  <Footer />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>
