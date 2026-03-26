@@ -1,0 +1,68 @@
+---
+import { chartBarIcon, brainIcon, cloudIcon, codeIcon } from '../icons';
+
+const services = [
+  {
+    title: 'Public Data Analysis',
+    desc: 'We help organizations collect, analyze, and visualize public data to gain insights and make informed decisions. Our data analysis services include data collection, cleaning, transformation, and visualization.',
+    icon: chartBarIcon,
+    accent: 'from-blue-500 to-cyan-400',
+    glow: 'bg-blue-500/20',
+    num: '01',
+  },
+  {
+    title: 'AI/ML Powered Knowledge Systems',
+    desc: 'We build AI/ML powered knowledge systems that help organizations make sense of various types of data including unstructured data, leveraging the capabilities of LLMs and Information retrieval systems to provide easy-to-use interfaces for users to interact with the data.',
+    icon: brainIcon,
+    accent: 'from-purple-500 to-violet-400',
+    glow: 'bg-purple-500/20',
+    num: '02',
+  },
+  {
+    title: 'DevOps Services',
+    desc: 'Transform your development process by setting up automated pipelines, continuous integration, and continuous deployment. Optimize cloud architecture to be performant, resilient, and cost-effective.',
+    icon: cloudIcon,
+    accent: 'from-amber-500 to-orange-400',
+    glow: 'bg-amber-500/20',
+    num: '03',
+  },
+  {
+    title: 'Application Development',
+    desc: 'We specialize in building robust web applications. Our team of experienced developers utilize the latest technologies to create scalable, secure, and high-performance cloud native solutions that require little to no maintenance.',
+    icon: codeIcon,
+    accent: 'from-emerald-500 to-teal-400',
+    glow: 'bg-emerald-500/20',
+    num: '04',
+  },
+];
+---
+
+<section id="services" class="py-28 px-6 bg-gray-950 relative overflow-hidden scroll-mt-20 grain">
+  <!-- Subtle background accents -->
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl -translate-y-1/2"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-3xl translate-y-1/2"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="text-center mb-20">
+      <span class="section-label text-amber-400 mb-4 inline-block">What We Do</span>
+      <h2 class="section-heading text-white mb-5">Our Services</h2>
+      <p class="text-lg text-white/50 max-w-xl mx-auto">We bring expertise across the full spectrum of modern technology solutions</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      {services.map((service) => (
+        <div class="group relative bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-500">
+          <!-- Number watermark -->
+          <span class="absolute top-6 right-8 text-6xl font-extrabold text-white/[0.04] select-none" style="font-family: 'Outfit', sans-serif;">{service.num}</span>
+
+          <div class={`relative w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${service.glow}`}>
+            <div class={`absolute inset-0 rounded-xl bg-gradient-to-br ${service.accent} opacity-20`}></div>
+            <Fragment set:html={service.icon('w-7 h-7 text-white relative z-10')} />
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">{service.title}</h3>
+          <p class="text-sm text-white/50 leading-relaxed group-hover:text-white/65 transition-colors duration-300">{service.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
