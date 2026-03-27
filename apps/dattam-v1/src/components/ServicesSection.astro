@@ -6,61 +6,59 @@ const services = [
     title: 'Open Data Datasets',
     desc: 'We build and curate open data datasets, making public data accessible, clean, and ready for analysis. From collection and transformation to publishing, we help organizations unlock the value of open data.',
     icon: chartBarIcon,
-    accent: 'from-blue-500 to-cyan-400',
-    glow: 'bg-blue-500/20',
+    bgColor: 'bg-blue-50',
+    textColor: 'text-blue-600',
+    borderColor: 'border-blue-100',
     num: '01',
   },
   {
     title: 'Agentic AI Tools',
     desc: 'We build agentic AI tools powered by LLMs and information retrieval systems that help organizations make sense of complex data. Our tools provide intuitive interfaces for users to interact with and extract insights from structured and unstructured data.',
     icon: brainIcon,
-    accent: 'from-purple-500 to-violet-400',
-    glow: 'bg-purple-500/20',
+    bgColor: 'bg-purple-50',
+    textColor: 'text-purple-600',
+    borderColor: 'border-purple-100',
     num: '02',
   },
   {
     title: 'Data Analysis & Visualization',
     desc: 'We help organizations analyze and visualize data to uncover patterns, trends, and actionable insights. From interactive dashboards to custom reporting tools, we turn raw data into clear, compelling stories.',
     icon: codeIcon,
-    accent: 'from-emerald-500 to-teal-400',
-    glow: 'bg-emerald-500/20',
+    bgColor: 'bg-emerald-50',
+    textColor: 'text-emerald-600',
+    borderColor: 'border-emerald-100',
     num: '03',
   },
   {
     title: 'DevOps Services',
     desc: 'Transform your development process with automated pipelines, continuous integration, and continuous deployment. We optimize cloud architecture to be performant, resilient, and cost-effective.',
     icon: cloudIcon,
-    accent: 'from-amber-500 to-orange-400',
-    glow: 'bg-amber-500/20',
+    bgColor: 'bg-amber-50',
+    textColor: 'text-amber-600',
+    borderColor: 'border-amber-100',
     num: '04',
   },
 ];
 ---
 
-<section id="services" class="py-28 px-6 bg-gray-950 relative overflow-hidden scroll-mt-20 grain">
-  <!-- Subtle background accents -->
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl -translate-y-1/2"></div>
-  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-3xl translate-y-1/2"></div>
-
-  <div class="max-w-7xl mx-auto relative z-10">
+<section id="services" class="py-28 px-6 bg-gray-50 scroll-mt-20">
+  <div class="max-w-7xl mx-auto">
     <div class="text-center mb-20">
-      <span class="section-label text-amber-400 mb-4 inline-block">What We Do</span>
-      <h2 class="section-heading text-white mb-5">Our Services</h2>
-      <p class="text-lg text-white/50 max-w-xl mx-auto">We bring expertise across the full spectrum of modern technology solutions</p>
+      <span class="section-label mb-4 inline-block">What We Do</span>
+      <h2 class="section-heading text-gray-900 mb-5">Our Services</h2>
+      <p class="text-lg text-gray-500 max-w-xl mx-auto">We bring expertise across the full spectrum of modern technology solutions</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
       {services.map((service) => (
-        <div class="group relative bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-500">
-          <!-- Number watermark -->
-          <span class="absolute top-6 right-8 text-6xl font-extrabold text-white/[0.04] select-none" style="font-family: 'Outfit', sans-serif;">{service.num}</span>
+        <div class={`group relative bg-white border ${service.borderColor} rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1`}>
+          <span class="absolute top-6 right-8 text-6xl font-extrabold text-gray-100 select-none" style="font-family: 'Outfit', sans-serif;">{service.num}</span>
 
-          <div class={`relative w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${service.glow}`}>
-            <div class={`absolute inset-0 rounded-xl bg-gradient-to-br ${service.accent} opacity-20`}></div>
-            <Fragment set:html={service.icon('w-7 h-7 text-white relative z-10')} />
+          <div class={`relative w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-6`}>
+            <Fragment set:html={service.icon(`w-7 h-7 ${service.textColor}`)} />
           </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">{service.title}</h3>
-          <p class="text-sm text-white/50 leading-relaxed group-hover:text-white/65 transition-colors duration-300">{service.desc}</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{service.desc}</p>
         </div>
       ))}
     </div>
