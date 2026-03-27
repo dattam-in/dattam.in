@@ -14,6 +14,13 @@ const products = [
     tag: 'Data Visualization',
     gradient: 'from-emerald-500 to-teal-500',
   },
+  {
+    name: 'ERAS',
+    url: 'https://tnclimatetracker.tn.gov.in/eras',
+    desc: 'Emissions Reduction Assessment System built for the Government of Tamil Nadu to track and analyze climate action progress.',
+    tag: 'Government',
+    gradient: 'from-blue-500 to-indigo-500',
+  },
 ];
 ---
 
@@ -25,7 +32,7 @@ const products = [
       <p class="text-lg text-gray-500 max-w-xl mx-auto">Products and platforms we've designed, built, and shipped</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
       {products.map((product) => (
         <a href={product.url} target="_blank" rel="noopener noreferrer" class="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 hover:-translate-y-1">
           <!-- Gradient top bar -->
