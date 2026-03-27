@@ -7,11 +7,11 @@ import { LINKS } from '../config';
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="group">
-        <img src="/logo.png" alt="Dattam Labs" class="h-12 w-auto brightness-0 invert group-hover:opacity-80 transition-opacity duration-300" />
+        <img src="/logo.png" alt="Dattam Labs" width="48" height="48" class="h-12 w-auto brightness-0 invert group-hover:opacity-80 transition-opacity duration-300" />
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-1">
+      <nav class="hidden md:flex items-center gap-1" aria-label="Main navigation">
         <a href="#services" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-lg hover:bg-white/10 transition-all duration-200">Services</a>
         <a href="#about" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-lg hover:bg-white/10 transition-all duration-200">About</a>
         <a href="#clients" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-lg hover:bg-white/10 transition-all duration-200">Clients</a>
@@ -39,7 +39,7 @@ import { LINKS } from '../config';
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-gray-950/95 backdrop-blur-xl border-t border-white/10">
-    <nav class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-1">
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-1" aria-label="Mobile navigation">
       <a href="#services" class="px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all text-sm font-medium">Services</a>
       <a href="#about" class="px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all text-sm font-medium">About</a>
       <a href="#clients" class="px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all text-sm font-medium">Clients</a>
