@@ -17,8 +17,14 @@ const jsonLd = {
       '@type': 'Organization',
       name: 'Dattam Labs',
       url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
       email: 'contact@dattam.in',
-      description: 'Dattam is a leading IT company in India providing services in data analysis, AI/ML, DevOps, and application development.',
+      description: 'Dattam Labs is a leading IT company in Hyderabad, India providing services in public data analysis, AI/ML knowledge systems, DevOps, and application development.',
+      foundingDate: '2022',
+      sameAs: [
+        'https://www.linkedin.com/company/dattam-in',
+        'https://github.com/dattam-in',
+      ],
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Awfis, Prestige Skytech, ISB Rd, Financial District, Nanakramguda',
@@ -27,6 +33,13 @@ const jsonLd = {
         postalCode: '500032',
         addressCountry: 'IN',
       },
+      knowsAbout: [
+        'Data Analysis',
+        'AI/ML',
+        'DevOps',
+        'Web Application Development',
+        'Cloud Native Solutions',
+      ],
     },
     {
       '@type': 'WebSite',

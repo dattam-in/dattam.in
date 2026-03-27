@@ -42,7 +42,7 @@
   }
 
   .section-label {
-    @apply inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-600;
+    @apply inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-700;
   }
 
   .section-heading {
