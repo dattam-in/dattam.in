@@ -6,6 +6,7 @@ const clients = [
   { name: 'StarTech365', logo: '/clients/startechlogo.png', url: 'https://startech365.net/' },
   { name: 'Crowd Power Ventures', logo: '/clients/crowdpower.svg', url: 'https://www.crowd-power-ventures.com/' },
   { name: 'AeroLeads', logo: '/clients/aeroleads.png', url: 'https://aeroleads.com/' },
+  { name: 'Teachally', logo: '/clients/teachally.png', url: 'https://teachally.com/' },
 ];
 ---
 
@@ -15,7 +16,7 @@ const clients = [
       <span class="section-label mb-3 inline-block">Trusted By</span>
       <h2 class="text-3xl font-bold">Our Clients</h2>
     </div>
-    <div class="flex flex-wrap items-center justify-center gap-12 md:gap-16 max-w-4xl mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
       {clients.map((client) => (
         <a href={client.url} target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center p-4">
           <img
