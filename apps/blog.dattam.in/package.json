@@ -1,0 +1,31 @@
+{
+  "name": "@dattam/blog",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dattam/ui": "workspace:*",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@dattam/eslint-config": "workspace:*",
+    "@dattam/tailwind-config": "workspace:*",
+    "@dattam/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
+  }
+}
