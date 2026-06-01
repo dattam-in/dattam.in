@@ -1,0 +1,6 @@
+/*
+ * Source styles for the shared UI package.
+ * Apps include the package source in their Tailwind content scan, so utility
+ * classes used in these components are picked up automatically. Put any
+ * component-specific base layers here.
+ */
