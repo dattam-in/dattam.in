@@ -1,0 +1,246 @@
+@import "@dattam/tailwind-config/shared-styles.css";
+
+/* Scan the shared UI package source so its utility classes are generated. */
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+/*
+ * Dattam — premium dark theme.
+ * Semantic design tokens layered on top of the shared brand scale.
+ */
+@theme {
+  --color-background: oklch(0.15 0.008 265);
+  --color-surface: oklch(0.185 0.01 265);
+  --color-surface-2: oklch(0.22 0.012 265);
+  --color-foreground: oklch(0.97 0.004 265);
+  --color-muted: oklch(0.7 0.012 265);
+  --color-muted-foreground: oklch(0.62 0.014 265);
+  --color-faint: oklch(0.5 0.014 265);
+  --color-foreground-dim: oklch(0.72 0.02 265);
+
+  --color-border: oklch(1 0 0 / 0.08);
+  --color-border-strong: oklch(1 0 0 / 0.14);
+
+  /* Structural linework — the Datum Grid spine. Two tiers only. */
+  --color-rule: oklch(1 0 0 / 0.1);
+  --color-rule-strong: oklch(1 0 0 / 0.2);
+
+  --color-accent: oklch(0.62 0.19 258);
+  --color-accent-foreground: oklch(0.98 0.01 258);
+  --color-cyan: oklch(0.82 0.13 205);
+  --color-ring: oklch(0.62 0.19 258 / 0.6);
+
+  --radius: 0.5rem;
+  --radius-plate: 0.375rem;
+
+  /* Editorial type scale */
+  --text-display: clamp(2.75rem, 7vw, 6.5rem);
+  --text-headline: clamp(2rem, 4vw, 3.5rem);
+  --text-label: 0.6875rem;
+
+  /* Grid constant driving bg-grid + 12-col rhythm */
+  --grid-cell: 64px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: oklch(0.62 0.19 258 / 0.3);
+    color: var(--color-foreground);
+  }
+
+  /* Premium thin scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(1 0 0 / 0.1);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(1 0 0 / 0.18);
+    background-clip: content-box;
+  }
+}
+
+/* ---- Premium background utilities ---- */
+
+/* Engineering grid — drafting tone, aligned to --grid-cell */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.035) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+
+@utility bg-grid-sm {
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Dotted field */
+@utility bg-dots {
+  background-image: radial-gradient(
+    oklch(1 0 0 / 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* Radial fade mask — fades a background toward the edges */
+@utility mask-radial-faded {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 35%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 35%,
+    transparent 75%
+  );
+}
+
+@utility mask-b-faded {
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* Subtle film grain */
+@utility bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Gradient text */
+@utility text-gradient {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-foreground) 0%,
+    var(--color-foreground-dim) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@utility text-gradient-accent {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-accent) 0%,
+    var(--color-cyan) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ---- The Datum Grid — coordinate-system motif ---- */
+
+/* Coordinate / index label voice. Mono, measured, factual. */
+@utility mono-coord {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+/* Origin cross-tick on a rule (10px perpendicular mark at the start) */
+@utility datum-tick {
+  position: relative;
+}
+@utility datum-tick-x {
+  position: relative;
+}
+
+/* Corner registration crosses (+) at two opposing corners */
+@utility reg-mark {
+  position: relative;
+}
+.reg-mark::before,
+.reg-mark::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--color-rule-strong), var(--color-rule-strong)),
+    linear-gradient(var(--color-rule-strong), var(--color-rule-strong));
+  background-size:
+    9px 1px,
+    1px 9px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.reg-mark::before {
+  top: -1px;
+  left: -1px;
+}
+.reg-mark::after {
+  right: -1px;
+  bottom: -1px;
+}
+
+/* Hairline rules forming the visible spine */
+@utility rule-x {
+  height: 1px;
+  width: 100%;
+  background: var(--color-rule);
+}
+@utility rule-y {
+  width: 1px;
+  height: 100%;
+  background: var(--color-rule);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
