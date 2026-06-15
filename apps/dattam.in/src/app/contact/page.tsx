@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail, MapPin, Clock } from "lucide-react";
+import { Mail, MapPin, Clock, Calendar, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
 import { GridBackdrop, GlowOrb } from "@/components/visuals/backgrounds";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/brand";
@@ -43,6 +44,20 @@ export default function ContactPage() {
                 come back with how we&apos;d architect, design, and ship it — and a
                 clear next step. No obligation.
               </p>
+            </Reveal>
+
+            <Reveal delay={3}>
+              <Button asChild size="lg" className="mt-8 w-fit">
+                <a
+                  href={siteConfig.calendly}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Calendar />
+                  Book a 30-min call
+                  <ArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </Button>
             </Reveal>
 
             <div className="mt-12 flex flex-col gap-4">

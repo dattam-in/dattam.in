@@ -107,11 +107,8 @@ export const techStack: string[] = [
   "AWS",
   "Docker",
   "Kubernetes",
-  "Terraform",
   "OpenAI",
-  "LangChain",
   "Redis",
-  "GraphQL",
 ];
 
 export interface ProcessStep {
@@ -248,23 +245,37 @@ export interface CaseMetric {
   label: string;
 }
 
+export interface Feature {
+  title: string;
+  description: string;
+}
+
+export interface TimelineStep {
+  phase: string;
+  detail: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
   tagline: string;
   category: string;
   year: string;
+  role: string;
   accent: string;
   image: string;
+  gallery: string[];
   siteUrl: string;
   summary: string;
   stack: string[];
   metrics: CaseMetric[];
+  features: Feature[];
   problem: string;
   vision: string;
   architecture: string;
   challenges: string[];
   optimizations: string[];
+  timeline: TimelineStep[];
   outcome: string;
 }
 
@@ -278,6 +289,36 @@ export const projects: Project[] = [
     accent: "oklch(0.62 0.19 258)",
     image: "/projects/assetly.jpg",
     siteUrl: "assetlyhq.com",
+    role: "Product design + full-stack engineering",
+    gallery: ["/projects/assetly.jpg", "/projects/assetly-2.jpg"],
+    features: [
+      {
+        title: "Guided land discovery",
+        description:
+          "A stepped flow — state, location, name — surfaces likely pattadar records and matches them to a family in minutes.",
+      },
+      {
+        title: "Document vault & watch tower",
+        description:
+          "Every title, payment, and notice in one auditable place, with alerts when something needs attention.",
+      },
+      {
+        title: "Multi-tenant by design",
+        description:
+          "Strict row-level isolation across organisations and roles, so each owner sees only their own estate.",
+      },
+      {
+        title: "Reliable recurring collections",
+        description:
+          "Idempotent payment jobs handle rent across timezones and currencies without duplicate charges.",
+      },
+    ],
+    timeline: [
+      { phase: "Discovery", detail: "Mapped the NRI ownership journey and the trust gaps in managing property remotely." },
+      { phase: "Architecture", detail: "Turborepo monorepo, FastAPI + PostgreSQL with row-level multi-tenancy." },
+      { phase: "Build", detail: "Shipped tenants, payments, documents, and maintenance in tight, reviewed loops." },
+      { phase: "Launch & scale", detail: "Edge-rendered dashboards and query caching; zero critical incidents in year one." },
+    ],
     summary:
       "A multi-tenant property management platform that lets NRIs manage Indian real estate remotely — tenants, payments, documents, and maintenance in one place.",
     stack: ["Next.js", "FastAPI", "PostgreSQL", "AWS", "Stripe", "Turborepo"],
@@ -314,6 +355,40 @@ export const projects: Project[] = [
     accent: "oklch(0.78 0.14 165)",
     image: "/projects/cr-atlas.jpg",
     siteUrl: "cravis.ai",
+    role: "Product engineering + agentic AI",
+    gallery: [
+      "/projects/cr-atlas.jpg",
+      "/projects/cravis-2.jpg",
+      "/projects/cravis-3.jpg",
+    ],
+    features: [
+      {
+        title: "Ask CRAVIS",
+        description:
+          "A grounded AI agent answers plain-language questions with charts, maps, and tables — every answer source-backed.",
+      },
+      {
+        title: "The Atlas",
+        description:
+          "Explore hot days, heavy-rainfall days, and dry spells across regions in an interactive map.",
+      },
+      {
+        title: "Use-case lenses",
+        description:
+          "Tuned views for policy, journalism, research, and finance — the same data, framed for each audience.",
+      },
+      {
+        title: "Open, exportable data",
+        description:
+          "Granular CSVs, Heat Action Plans, and methodology docs, all available to download.",
+      },
+    ],
+    timeline: [
+      { phase: "Discovery", detail: "Scoped the data sources and the questions policymakers actually ask." },
+      { phase: "Data pipeline", detail: "Ingested 1981–2024 history and 2030–2070 projections into PostGIS." },
+      { phase: "Agent + Atlas", detail: "Built retrieval-grounded Ask CRAVIS and the Mapbox vector-tile Atlas." },
+      { phase: "Launch", detail: "Shipped with CEEW as a reference climate-intelligence platform." },
+    ],
     summary:
       "CRAVIS — the Climate Resilience Analytics and Visualisation Intelligence System — is a conversational, agentic AI platform built with CEEW that brings historical trends, future projections, and sectoral data into one place, so anyone can ask a question and get a source-backed answer.",
     stack: ["Next.js", "Python", "PostGIS", "Mapbox", "LLM / RAG", "AWS"],
@@ -350,6 +425,36 @@ export const projects: Project[] = [
     accent: "oklch(0.7 0.15 60)",
     image: "/projects/eras.jpg",
     siteUrl: "tnclimatetracker.tn.gov.in",
+    role: "Platform engineering + data systems",
+    gallery: ["/projects/eras.jpg", "/projects/eras-2.jpg"],
+    features: [
+      {
+        title: "Validation on ingest",
+        description:
+          "Every submission is checked against domain rules before it can enter the system.",
+      },
+      {
+        title: "State-wide emissions profile",
+        description:
+          "Sector-wise emissions, intensity, and energy roll up into one official view.",
+      },
+      {
+        title: "Tamper-evident audit trail",
+        description:
+          "Append-only history gives full traceability for government reporting.",
+      },
+      {
+        title: "Always-on operations",
+        description:
+          "Containerised deploys with health checks and Grafana observability, 24/7.",
+      },
+    ],
+    timeline: [
+      { phase: "Discovery", detail: "Mapped reporting sources and the audit requirements for official use." },
+      { phase: "Architecture", detail: "FastAPI ingestion, PostgreSQL history, Celery aggregation." },
+      { phase: "Build", detail: "Validation rules, dashboards, and append-only audit storage." },
+      { phase: "Operate", detail: "Monitored, containerised deployment for a state government." },
+    ],
     summary:
       "An emissions tracking and reporting system for the Tamil Nadu government — ingesting, validating, and reporting environmental data at state scale.",
     stack: ["FastAPI", "PostgreSQL", "React", "Celery", "Docker", "Grafana"],
@@ -376,6 +481,72 @@ export const projects: Project[] = [
     ],
     outcome:
       "ERAS gave the government a single, trustworthy source for emissions data — replacing fragile spreadsheets with a monitored, auditable platform.",
+  },
+  {
+    slug: "supreme-court-judgments",
+    name: "Supreme Court Judgments",
+    tagline: "75 years of case law, opened to everyone.",
+    category: "Open Data",
+    year: "2026",
+    accent: "oklch(0.66 0.15 300)",
+    image: "/projects/scj.jpg",
+    siteUrl: "registry.opendata.aws",
+    role: "Data engineering + open-data publishing",
+    gallery: ["/projects/scj.jpg", "/projects/scj-2.jpg"],
+    features: [
+      {
+        title: "Every judgment, 1950–2025",
+        description:
+          "75 years of Supreme Court rulings, in English and regional languages.",
+      },
+      {
+        title: "Query without an account",
+        description:
+          "Columnar Parquet metadata is queryable directly with AWS Athena — no credentials needed.",
+      },
+      {
+        title: "AI-ready corpus",
+        description:
+          "Clean, normalized text built for legal NLP and model training.",
+      },
+      {
+        title: "Open & maintained",
+        description:
+          "CC-BY-4.0 on the AWS Open Data Registry, refreshed bi-monthly by Dattam.",
+      },
+    ],
+    timeline: [
+      { phase: "Collection", detail: "Scraped and de-duplicated judgments from the ecourts portal." },
+      { phase: "Normalization", detail: "Extracted clean text and a consistent schema across languages." },
+      { phase: "Publish", detail: "Released to public S3 with JSON + Parquet metadata." },
+      { phase: "Maintain", detail: "Bi-monthly incremental refresh under CC-BY-4.0." },
+    ],
+    summary:
+      "An open, machine-readable corpus of every Indian Supreme Court judgment from 1950 to 2025 — published and maintained by Dattam on the AWS Open Data Registry, free for anyone to query or train on.",
+    stack: ["AWS S3", "Athena", "Python", "Parquet", "DuckDB"],
+    metrics: [
+      { value: "75yr", label: "Coverage (1950–2025)" },
+      { value: "2", label: "Metadata formats" },
+      { value: "CC-BY", label: "Open license" },
+    ],
+    problem:
+      "Seventy-five years of Supreme Court judgments sat locked in the ecourts portal — scattered PDFs across many languages, with no clean, queryable, bulk-accessible corpus for researchers or AI teams to build on.",
+    vision:
+      "An open, machine-readable record of every Supreme Court judgment — free to access, simple to query, and ready for legal research and AI.",
+    architecture:
+      "Judgments are collected from the ecourts portal, normalized, and published to a public AWS S3 bucket (indian-supreme-court-judgments, ap-south-1) as language-tagged archives. Metadata is emitted as raw JSON and columnar Parquet, queryable directly with AWS Athena — no AWS account required. The corpus is refreshed bi-monthly under a CC-BY-4.0 license.",
+    challenges: [
+      "Extracting clean text from inconsistent, multi-language court PDFs.",
+      "Normalizing 75 years of documents into one consistent, queryable schema.",
+      "Publishing at bulk scale with zero-friction, credential-free access.",
+    ],
+    optimizations: [
+      "Columnar Parquet metadata makes Athena queries fast and cheap.",
+      "Language-tagged archives keep bulk downloads targeted.",
+      "Bi-monthly incremental refresh keeps the corpus current without full re-publishes.",
+    ],
+    outcome:
+      "A free, AWS-hosted corpus of Indian Supreme Court judgments (1950–2025) that anyone can query or train on — listed on the AWS Open Data Registry and maintained by Dattam.",
   },
 ];
 

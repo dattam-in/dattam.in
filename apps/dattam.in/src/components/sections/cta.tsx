@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
@@ -33,10 +32,14 @@ export function CTA({
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="/contact">
+                <a
+                  href={siteConfig.calendly}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Book a consultation
                   <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                </a>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <a href={`mailto:${siteConfig.email}`}>

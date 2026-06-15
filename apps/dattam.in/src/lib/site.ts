@@ -7,6 +7,7 @@ export const siteConfig = {
     "Dattam is a product engineering studio. We partner with founders and organizations to design, build, and scale production-grade software — SaaS platforms, agentic AI, data products, and cloud infrastructure.",
   tagline: "An engineering studio for production-grade software.",
   email: "contact@dattam.in",
+  calendly: "https://calendly.com/pradeep-vanga/30-min-meeting-pradeep",
   address:
     "Awfis, Prestige Skytech, ISB Road, Financial District, Nanakramguda, Telangana 500032",
   socials: {

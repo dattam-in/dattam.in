@@ -7,6 +7,13 @@ const rows = [
   { slug: "assetly", name: "Assetly", year: "2026", tag: "SaaS", x: "x:01" },
   { slug: "cr-atlas", name: "CRAVIS.AI", year: "2026", tag: "AI · Data", x: "x:02" },
   { slug: "eras", name: "ERAS", year: "2026", tag: "Gov", x: "x:03" },
+  {
+    slug: "supreme-court-judgments",
+    name: "SC Judgments",
+    year: "2026",
+    tag: "Open Data",
+    x: "x:04",
+  },
 ];
 
 export function WorkIndex() {
@@ -14,7 +21,7 @@ export function WorkIndex() {
     <div className="flex flex-col">
       <div className="flex items-center justify-between">
         <span className="mono-coord">Selected work</span>
-        <span className="mono-coord">03</span>
+        <span className="mono-coord">04</span>
       </div>
       <RuleDraw className="mt-3" />
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
+import { siteConfig } from "@/lib/site";
 import { GridBackdrop } from "@/components/visuals/backgrounds";
 import { DatumRule } from "@/components/visuals/datum-rule";
 import { MaskLines } from "@/components/motion/rule-draw";
@@ -57,7 +58,13 @@ export function Hero() {
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/contact">Book a consultation</Link>
+                  <a
+                    href={siteConfig.calendly}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Book a consultation
+                  </a>
                 </Button>
               </div>
             </div>
