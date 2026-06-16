@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { NoiseOverlay } from "@/components/visuals/backgrounds";
 import "./globals.css";
@@ -57,8 +58,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08090c",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#08090c" },
+    { media: "(prefers-color-scheme: light)", color: "#fbfbfc" },
+  ],
 };
 
 export default function RootLayout({
@@ -67,15 +70,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SmoothScroll />
-        <NoiseOverlay />
-        <Navbar />
-        <main className="relative">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <SmoothScroll />
+          <NoiseOverlay />
+          <Navbar />
+          <main className="relative">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

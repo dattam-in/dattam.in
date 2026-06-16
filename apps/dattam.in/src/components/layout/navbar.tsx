@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@dattam/ui/cn";
 import { nav } from "@/lib/site";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Logo } from "@/components/layout/logo";
 
 export function Navbar() {
@@ -72,21 +73,25 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-2 md:flex">
+            <ThemeToggle />
             <Button asChild size="sm">
               <Link href="/contact">Start a project</Link>
             </Button>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex size-10 items-center justify-center rounded-full border border-border text-foreground md:hidden"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-border text-foreground"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
