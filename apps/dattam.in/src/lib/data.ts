@@ -297,58 +297,58 @@ export const projects: Project[] = [
     ],
     features: [
       {
-        title: "Guided land discovery",
+        title: "Family land discovery",
         description:
-          "A stepped flow — state, location, name — surfaces likely pattadar records and matches them to a family in minutes.",
+          "A guided flow scrapes official state portals (Meebhoomi, Bhunaksha, EC) to surface likely pattadar records and match them to a family.",
       },
       {
-        title: "Document vault & watch tower",
+        title: "AI document intelligence",
         description:
-          "Every title, payment, and notice in one auditable place, with alerts when something needs attention.",
+          "Gemini-powered OCR, extraction, and summarization over titles and notices, across 40+ document types.",
       },
       {
-        title: "Multi-tenant by design",
+        title: "Asset chat",
         description:
-          "Strict row-level isolation across organisations and roles, so each owner sees only their own estate.",
+          "A Google ADK agent answers plain-language questions over an asset's full context — title, documents, and history.",
       },
       {
-        title: "Reliable recurring collections",
+        title: "Services & secure payments",
         description:
-          "Idempotent payment jobs handle rent across timezones and currencies without duplicate charges.",
+          "Title packs and legal services with Razorpay checkout and passkey (WebAuthn) sign-in; 28+ service types.",
       },
     ],
     timeline: [
       { phase: "Discovery", detail: "Mapped the NRI ownership journey and the trust gaps in managing property remotely." },
-      { phase: "Architecture", detail: "Turborepo monorepo, FastAPI + PostgreSQL with row-level multi-tenancy." },
-      { phase: "Build", detail: "Shipped tenants, payments, documents, and maintenance in tight, reviewed loops." },
-      { phase: "Launch & scale", detail: "Edge-rendered dashboards and query caching; zero critical incidents in year one." },
+      { phase: "Architecture", detail: "Turborepo monorepo — Next.js frontend, FastAPI backend, async PostgreSQL with row-level multi-tenancy." },
+      { phase: "Build", detail: "Shipped assets, documents, services, and the land-record scrapers in tight, reviewed loops." },
+      { phase: "Launch & scale", detail: "Dockerised on AWS EC2 (ARM64) with Redis/Taskiq workers; frontend on Amplify + CloudFront." },
     ],
     summary:
-      "A multi-tenant property management platform that lets NRIs manage Indian real estate remotely — tenants, payments, documents, and maintenance in one place.",
-    stack: ["Next.js", "FastAPI", "PostgreSQL", "AWS", "Stripe", "Turborepo"],
+      "A property operating system for global Indians — verify title, organise documents, monitor risk, and manage Indian real estate remotely. Multi-tenant, with automated land-record discovery and AI document intelligence.",
+    stack: ["Next.js", "React", "Tailwind", "FastAPI", "PostgreSQL", "Redis", "Razorpay", "AWS"],
     metrics: [
-      { value: "10k+", label: "Properties tracked" },
-      { value: "<200ms", label: "API p95 latency" },
-      { value: "99.9%", label: "Uptime" },
+      { value: "3", label: "States integrated (TN·TS·AP)" },
+      { value: "40+", label: "Document types" },
+      { value: "28+", label: "Services offered" },
     ],
     problem:
-      "Indian expats managing property back home juggled WhatsApp, spreadsheets, and unreliable local agents — with no single source of truth for rent, documents, or maintenance.",
+      "Indian expats managing property back home juggled WhatsApp, spreadsheets, and unreliable local agents — with no single source of truth for title, documents, payments, or land records.",
     vision:
-      "One trustworthy platform that makes remote ownership feel local: real-time visibility, automated collections, and an audit trail for every action.",
+      "One trustworthy platform that makes remote ownership feel local: verified records, organised documents, AI assistance, and an audit trail for every action.",
     architecture:
-      "A Turborepo monorepo with a Next.js App Router frontend and a FastAPI backend, backed by PostgreSQL with row-level multi-tenancy. Background workers handle reminders and reconciliation; S3 presigned uploads keep documents secure.",
+      "A Turborepo monorepo — a Next.js 15 frontend on AWS Amplify + CloudFront, and a FastAPI (Python 3.13) backend in Docker on EC2 (ARM64) with async PostgreSQL and Alembic migrations. Redis-backed Taskiq workers run background jobs and headless-browser scrapers against state land-record portals; documents and geospatial boundary data live in S3. Gemini (Google ADK) and Claude power document extraction and asset chat.",
     challenges: [
-      "Strict multi-tenant data isolation across organisations and roles.",
-      "Reliable recurring payment collection across timezones and currencies.",
-      "Document-heavy workflows that had to stay fast and auditable.",
+      "Reliable scraping of inconsistent, OTP-gated government land-record portals across states.",
+      "Strict multi-tenant isolation across organisations and roles.",
+      "Turning messy, multilingual property documents into structured, trustworthy data.",
     ],
     optimizations: [
-      "Query-level caching and connection pooling cut p95 latency below 200ms.",
-      "Edge-rendered dashboards with streaming for instant first paint.",
-      "Idempotent payment jobs eliminated duplicate charges under retries.",
+      "Redis + Taskiq decouple slow scraping and AI work from the request path.",
+      "Idempotent payment and scraping jobs stay correct under retries.",
+      "ARM-native Docker on EC2 with auto migrations, behind an edge-cached Amplify frontend.",
     ],
     outcome:
-      "Assetly launched to a growing base of remote owners with zero critical incidents in its first year — and a codebase the team can extend without fear.",
+      "Assetly gives remote owners a single, trustworthy home for their Indian property — verified records, AI document intelligence, and services on tap — on a codebase the team can extend without fear.",
   },
   {
     slug: "cr-atlas",
@@ -370,53 +370,53 @@ export const projects: Project[] = [
       {
         title: "Ask CRAVIS",
         description:
-          "A grounded AI agent answers plain-language questions with charts, maps, and tables — every answer source-backed.",
+          "A grounded agent answers plain-language questions with charts, maps, and tables — SQL written by Claude, run read-only over the warehouse, every answer source-backed.",
       },
       {
         title: "The Atlas",
         description:
-          "Explore hot days, heavy-rainfall days, and dry spells across regions in an interactive map.",
+          "An interactive map and chart builder spanning historical records and RCP 4.5/8.5 projections, with side-by-side comparison.",
       },
       {
-        title: "Use-case lenses",
+        title: "Methodology grounding",
         description:
-          "Tuned views for policy, journalism, research, and finance — the same data, framed for each audience.",
+          "A retrieval layer ties every answer back to the official Atlas methodology — sources, formulas, and assumptions.",
       },
       {
-        title: "Open, exportable data",
+        title: "Multi-model routing",
         description:
-          "Granular CSVs, Heat Action Plans, and methodology docs, all available to download.",
+          "Tasks route across OpenAI, Gemini, and Bedrock Claude through one abstraction — each model used where it's strongest.",
       },
     ],
     timeline: [
       { phase: "Discovery", detail: "Scoped the data sources and the questions policymakers actually ask." },
-      { phase: "Data pipeline", detail: "Ingested 1981–2024 history and 2030–2070 projections into PostGIS." },
-      { phase: "Agent + Atlas", detail: "Built retrieval-grounded Ask CRAVIS and the Mapbox vector-tile Atlas." },
+      { phase: "Data warehouse", detail: "Staged 1980–2024 history and RCP 4.5/8.5 projections as Parquet on S3, queried via AWS Athena." },
+      { phase: "Agent + Atlas", detail: "Built the Google ADK agent (SQL via Bedrock Claude) and the Mapbox + Vega-Lite Atlas." },
       { phase: "Launch", detail: "Shipped with CEEW as a reference climate-intelligence platform." },
     ],
     summary:
       "CRAVIS — the Climate Resilience Analytics and Visualisation Intelligence System — is a conversational, agentic AI platform built with CEEW that brings historical trends, future projections, and sectoral data into one place, so anyone can ask a question and get a source-backed answer.",
-    stack: ["Next.js", "Python", "PostGIS", "Mapbox", "LLM / RAG", "AWS"],
+    stack: ["Next.js", "FastAPI", "AWS Athena", "Mapbox GL", "Google ADK", "Claude", "PostgreSQL", "DuckDB"],
     metrics: [
-      { value: "43yr", label: "Climate record (1981–2024)" },
-      { value: "6", label: "Hazard layers" },
-      { value: "4", label: "Sectoral datasets" },
+      { value: "45yr", label: "Climate record (1980–2024)" },
+      { value: "750+", label: "Districts covered" },
+      { value: "5", label: "Hazard indices" },
     ],
     problem:
       "Climate intelligence sat in disconnected CSVs, PDFs, and portals — historical trends in one place, projections in another, sectoral data somewhere else. Policymakers, journalists, and researchers couldn't ask a plain question and get a trustworthy, source-backed answer.",
     vision:
       "One platform where anyone can explore local climate intelligence conversationally — ask in plain language and receive charts, maps, and tables, each traceable back to its source.",
     architecture:
-      "Historical (1981–2024) and projected (2030–2070, RCP 4.5/8.5) climate data, extreme-event records, and sectoral layers are ingested through Python pipelines into PostGIS and served as vector tiles to a Mapbox-powered Next.js Atlas. An agentic AI layer — an LLM grounded by retrieval over the curated datasets — powers Ask CRAVIS, returning source-backed insight with generated charts, maps, and tables.",
+      "Climate datasets land in S3 as Parquet and are queried with AWS Athena. A FastAPI service (PostgreSQL for sessions) hosts a Google ADK agent that orchestrates sub-agents — SQL generation via AWS Bedrock Claude, guarded read-only against Athena; analysis in DuckDB and pandas; plus chart, map, and web-search tools — grounded by a methodology retrieval layer. Answers stream over WebSocket to a Next.js + Mapbox GL + Vega-Lite frontend, with raster layers served as Cloud-Optimized GeoTIFF tiles.",
     challenges: [
-      "Grounding an LLM agent in trusted data so every answer is source-backed, never hallucinated.",
-      "Harmonising decades of historical records with multiple future-projection scenarios.",
-      "Rendering nationwide hazard and sectoral layers smoothly in the browser.",
+      "Grounding the agent so generated SQL is safe (read-only enforced) and answers cite their sources.",
+      "Querying a 45-year climate warehouse cheaply within Athena's row limits.",
+      "Rendering raster and vector climate layers smoothly across the country.",
     ],
     optimizations: [
-      "Retrieval constrained to curated datasets keeps every Ask CRAVIS answer traceable.",
-      "Vector tiling and pre-aggregation keep the Atlas interactive at scale.",
-      "Progressive loading delivers the first map view in under a second.",
+      "An in-memory methodology index grounds answers with zero added latency — no vector database.",
+      "Cloud-Optimized GeoTIFF tiling keeps raster overlays fast.",
+      "Per-conversation result reuse avoids re-running expensive Athena queries.",
     ],
     outcome:
       "CRAVIS gives policymakers, journalists, and researchers a single conversational window into climate risk — turning days of data wrangling into a question and a source-backed answer.",
@@ -424,13 +424,13 @@ export const projects: Project[] = [
   {
     slug: "eras",
     name: "ERAS",
-    tagline: "Emissions accounting for an entire state.",
-    category: "Gov Platform",
+    tagline: "Tracking a state's path to net zero.",
+    category: "Gov Dashboard",
     year: "2026",
     accent: "oklch(0.7 0.15 60)",
     image: "/projects/eras/home.jpg",
     siteUrl: "tnclimatetracker.tn.gov.in",
-    role: "Platform engineering + data systems",
+    role: "Product engineering + data visualization",
     gallery: [
       "/projects/eras/home.jpg",
       "/projects/eras/industry.jpg",
@@ -438,58 +438,58 @@ export const projects: Project[] = [
     ],
     features: [
       {
-        title: "Validation on ingest",
+        title: "Six-sector emissions view",
         description:
-          "Every submission is checked against domain rules before it can enter the system.",
+          "Power, transport, industry, AFOLU, waste, and buildings — emissions, intensity, and energy in one official view.",
       },
       {
-        title: "State-wide emissions profile",
+        title: "Avoided-emissions tracking",
         description:
-          "Sector-wise emissions, intensity, and energy roll up into one official view.",
+          "Measures reductions achieved through policy against a baseline, on the path to net-zero before 2070.",
       },
       {
-        title: "Tamper-evident audit trail",
+        title: "Baseline toggle",
         description:
-          "Append-only history gives full traceability for government reporting.",
+          "Switch between actual and baseline emissions, and between static (2019-20) and moving-baseline methods.",
       },
       {
-        title: "Always-on operations",
+        title: "Report-ready export",
         description:
-          "Containerised deploys with health checks and Grafana observability, 24/7.",
+          "Any view exports to PNG or CSV and embeds via iframe for official reporting.",
       },
     ],
     timeline: [
-      { phase: "Discovery", detail: "Mapped reporting sources and the audit requirements for official use." },
-      { phase: "Architecture", detail: "FastAPI ingestion, PostgreSQL history, Celery aggregation." },
-      { phase: "Build", detail: "Validation rules, dashboards, and append-only audit storage." },
-      { phase: "Operate", detail: "Monitored, containerised deployment for a state government." },
+      { phase: "Discovery", detail: "Worked with CEEW and TNGCC on the accounting methodology and what the council needs to see." },
+      { phase: "Data model", detail: "Structured multi-sector emissions and baseline data as typed JSON." },
+      { phase: "Build", detail: "Six sector dashboards in Next.js + MUI + Recharts, with year and baseline controls." },
+      { phase: "Ship", detail: "A static, embeddable build for the Tamil Nadu government." },
     ],
     summary:
-      "An emissions tracking and reporting system for the Tamil Nadu government — ingesting, validating, and reporting environmental data at state scale.",
-    stack: ["FastAPI", "PostgreSQL", "React", "Celery", "Docker", "Grafana"],
+      "A state-level climate dashboard that tracks Tamil Nadu's greenhouse-gas emissions and the emissions avoided through policy — measured against baselines on the path to net-zero before 2070. Built with CEEW for the Tamil Nadu Green Climate Company.",
+    stack: ["Next.js", "React", "TypeScript", "MUI", "Recharts", "Nuqs"],
     metrics: [
-      { value: "State", label: "Scale deployment" },
-      { value: "100%", label: "Audit traceability" },
-      { value: "24/7", label: "Monitored" },
+      { value: "6", label: "Sectors tracked" },
+      { value: "168", label: "MtCO₂ (2022-23)" },
+      { value: "2070", label: "Net-zero target" },
     ],
     problem:
-      "Emissions reporting relied on manual submissions with no validation, no audit trail, and no consolidated view for government stakeholders.",
+      "Tamil Nadu's emissions and the impact of its climate policies were scattered across reports and spreadsheets — with no single, clear view for the Chief Minister's council to track progress toward net zero.",
     vision:
-      "A reliable system of record for emissions — validated on ingest, fully auditable, and trusted in official reporting.",
+      "One legible dashboard where decision-makers can see emissions by sector, the reductions policy has achieved, and how far the state is from its targets.",
     architecture:
-      "A FastAPI ingestion layer validates submissions against domain rules, stores them in PostgreSQL with full history, and runs Celery workers for aggregation. Grafana dashboards give operators real-time observability.",
+      "A static Next.js 16 / React 19 dashboard. Precomputed multi-sector emissions accounting — using static (2019-20) and moving-baseline methods — ships as typed JSON; MUI and Recharts render six sector views with year and baseline controls; Nuqs drives shareable URL state. Views export to PNG and CSV and embed via iframe, so the dashboard drops straight into official reporting.",
     challenges: [
-      "Enforcing data quality across many inconsistent reporting sources.",
-      "Guaranteeing a tamper-evident audit trail for official use.",
-      "Operating reliably for a government stakeholder, 24/7.",
+      "Turning multi-sector emissions accounting, with two baseline methods, into one clear executive view.",
+      "Keeping units consistent and comparable across six very different sectors.",
+      "Making every view exportable and embeddable for government reporting.",
     ],
     optimizations: [
-      "Validation-on-ingest stopped bad data at the door.",
-      "Append-only history gave 100% traceability for audits.",
-      "Containerised deploys with health checks kept the system always-on.",
+      "Fully static — precomputed JSON, no backend, instant loads, trivially cacheable.",
+      "URL-driven state makes any view shareable and embeddable.",
+      "Client-side PNG and CSV export produces report-ready artifacts.",
     ],
     outcome:
-      "ERAS gave the government a single, trustworthy source for emissions data — replacing fragile spreadsheets with a monitored, auditable platform.",
+      "ERAS gives the Tamil Nadu government a single, legible view of its emissions and climate progress — turning scattered accounting into a dashboard the state's leadership can act on.",
   },
   {
     slug: "supreme-court-judgments",
