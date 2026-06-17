@@ -101,14 +101,16 @@ export const techStack: string[] = [
   "TypeScript",
   "Next.js",
   "React",
+  "Tailwind",
   "Python",
   "FastAPI",
   "PostgreSQL",
+  "Redis",
   "AWS",
   "Docker",
-  "Kubernetes",
+  "Mapbox",
   "OpenAI",
-  "Redis",
+  "Claude",
 ];
 
 export interface ProcessStep {
