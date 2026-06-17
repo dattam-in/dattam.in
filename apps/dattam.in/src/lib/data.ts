@@ -287,10 +287,14 @@ export const projects: Project[] = [
     category: "SaaS Platform",
     year: "2026",
     accent: "oklch(0.62 0.19 258)",
-    image: "/projects/assetly.jpg",
+    image: "/projects/assetly/assetly-home.jpg",
     siteUrl: "assetlyhq.com",
     role: "Product design + full-stack engineering",
-    gallery: ["/projects/assetly.jpg", "/projects/assetly-2.jpg"],
+    gallery: [
+      "/projects/assetly/assetly-home.jpg",
+      "/projects/assetly/assetly-how-it-works.jpg",
+      "/projects/assetly/assetly-services.jpg",
+    ],
     features: [
       {
         title: "Guided land discovery",
@@ -353,13 +357,14 @@ export const projects: Project[] = [
     category: "Agentic AI · Data Product",
     year: "2026",
     accent: "oklch(0.78 0.14 165)",
-    image: "/projects/cr-atlas.jpg",
+    image: "/projects/cravis/cravis-home.jpg",
     siteUrl: "cravis.ai",
     role: "Product engineering + agentic AI",
     gallery: [
-      "/projects/cr-atlas.jpg",
-      "/projects/cravis-2.jpg",
-      "/projects/cravis-3.jpg",
+      "/projects/cravis/cravis-home.jpg",
+      "/projects/cravis/atlas.jpg",
+      "/projects/cravis/ask-cravis.jpg",
+      "/projects/cravis/climate-stories.jpg",
     ],
     features: [
       {
@@ -423,10 +428,14 @@ export const projects: Project[] = [
     category: "Gov Platform",
     year: "2026",
     accent: "oklch(0.7 0.15 60)",
-    image: "/projects/eras.jpg",
+    image: "/projects/eras/home.jpg",
     siteUrl: "tnclimatetracker.tn.gov.in",
     role: "Platform engineering + data systems",
-    gallery: ["/projects/eras.jpg", "/projects/eras-2.jpg"],
+    gallery: [
+      "/projects/eras/home.jpg",
+      "/projects/eras/industry.jpg",
+      "/projects/eras/afolu.jpg",
+    ],
     features: [
       {
         title: "Validation on ingest",
