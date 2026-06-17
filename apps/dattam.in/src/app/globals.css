@@ -9,27 +9,32 @@
  * the whole system from one place (see :root + .dark below).
  */
 @theme {
-  --color-background: var(--bg);
-  --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
-  --color-foreground: var(--fg);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-fg);
-  --color-faint: var(--faint);
-  --color-foreground-dim: var(--fg-dim);
+  /* Light (default) — a clean drafting-paper surface with ink linework.
+     Dark overrides the same token names in `.dark` below. */
+  --color-background: oklch(0.99 0.002 265);
+  --color-surface: oklch(0.975 0.003 265);
+  --color-surface-2: oklch(0.945 0.005 265);
+  --color-foreground: oklch(0.23 0.012 265);
+  --color-muted: oklch(0.43 0.012 265);
+  --color-muted-foreground: oklch(0.47 0.012 265);
+  --color-faint: oklch(0.58 0.012 265);
+  --color-foreground-dim: oklch(0.42 0.02 265);
 
-  --color-border: var(--border);
-  --color-border-strong: var(--border-strong);
+  --color-border: oklch(0 0 0 / 0.1);
+  --color-border-strong: oklch(0 0 0 / 0.16);
 
   /* Structural linework — the Datum Grid spine. Two tiers only. */
-  --color-rule: var(--rule);
-  --color-rule-strong: var(--rule-strong);
+  --color-rule: oklch(0 0 0 / 0.12);
+  --color-rule-strong: oklch(0 0 0 / 0.26);
 
   /* Brand accent — shared across themes. */
   --color-accent: oklch(0.58 0.19 258);
   --color-accent-foreground: oklch(0.98 0.01 258);
   --color-cyan: oklch(0.74 0.13 215);
   --color-ring: oklch(0.58 0.19 258 / 0.55);
+
+  /* Grid line tint (overridden in dark). */
+  --color-grid-line: oklch(0 0 0 / 0.05);
 
   --radius: 0.5rem;
   --radius-plate: 0.375rem;
@@ -43,39 +48,25 @@
   --grid-cell: 64px;
 }
 
-/* Light (default) — a clean drafting-paper surface with ink linework. */
 :root {
-  --bg: oklch(0.99 0.002 265);
-  --surface: oklch(0.975 0.003 265);
-  --surface-2: oklch(0.945 0.005 265);
-  --fg: oklch(0.23 0.012 265);
-  --muted: oklch(0.43 0.012 265);
-  --muted-fg: oklch(0.47 0.012 265);
-  --faint: oklch(0.58 0.012 265);
-  --fg-dim: oklch(0.42 0.02 265);
-  --border: oklch(0 0 0 / 0.1);
-  --border-strong: oklch(0 0 0 / 0.16);
-  --rule: oklch(0 0 0 / 0.12);
-  --rule-strong: oklch(0 0 0 / 0.26);
-  --grid-line: oklch(0 0 0 / 0.05);
   color-scheme: light;
 }
 
-/* Dark — the cinematic studio surface. */
+/* Dark — the cinematic studio surface. Overrides the theme token values. */
 .dark {
-  --bg: oklch(0.15 0.008 265);
-  --surface: oklch(0.185 0.01 265);
-  --surface-2: oklch(0.22 0.012 265);
-  --fg: oklch(0.97 0.004 265);
-  --muted: oklch(0.7 0.012 265);
-  --muted-fg: oklch(0.62 0.014 265);
-  --faint: oklch(0.5 0.014 265);
-  --fg-dim: oklch(0.72 0.02 265);
-  --border: oklch(1 0 0 / 0.08);
-  --border-strong: oklch(1 0 0 / 0.14);
-  --rule: oklch(1 0 0 / 0.1);
-  --rule-strong: oklch(1 0 0 / 0.2);
-  --grid-line: oklch(1 0 0 / 0.035);
+  --color-background: oklch(0.15 0.008 265);
+  --color-surface: oklch(0.185 0.01 265);
+  --color-surface-2: oklch(0.22 0.012 265);
+  --color-foreground: oklch(0.97 0.004 265);
+  --color-muted: oklch(0.7 0.012 265);
+  --color-muted-foreground: oklch(0.62 0.014 265);
+  --color-faint: oklch(0.5 0.014 265);
+  --color-foreground-dim: oklch(0.72 0.02 265);
+  --color-border: oklch(1 0 0 / 0.08);
+  --color-border-strong: oklch(1 0 0 / 0.14);
+  --color-rule: oklch(1 0 0 / 0.1);
+  --color-rule-strong: oklch(1 0 0 / 0.2);
+  --color-grid-line: oklch(1 0 0 / 0.035);
   color-scheme: dark;
 }
 
@@ -127,21 +118,21 @@
 /* Engineering grid — drafting tone, aligned to --grid-cell */
 @utility bg-grid {
   background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
   background-size: var(--grid-cell) var(--grid-cell);
 }
 
 @utility bg-grid-sm {
   background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
 /* Dotted field */
 @utility bg-dots {
-  background-image: radial-gradient(var(--grid-line) 1px, transparent 1px);
+  background-image: radial-gradient(var(--color-grid-line) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
