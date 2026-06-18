@@ -1,0 +1,56 @@
+---
+import { LINKS } from '../config';
+import { mailIcon, linkedinIcon, githubIcon } from '../icons';
+---
+
+<footer class="bg-gray-900 text-white pt-20 pb-8 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-12 mb-16">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <a href="/" class="inline-block mb-5">
+          <img src="/logo.png" alt="Dattam Labs" width="48" height="48" class="h-12 w-auto brightness-0 invert" />
+        </a>
+        <p class="text-white/60 text-sm leading-relaxed max-w-sm mb-6">
+          Empowering organizations with data-driven IT solutions, AI/ML systems, and modern application development.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href={LINKS.email} class="w-9 h-9 rounded-lg bg-white/10 hover:bg-amber-500/20 flex items-center justify-center text-white/50 hover:text-amber-400 transition-all duration-300" aria-label="Email">
+            <Fragment set:html={mailIcon('w-4 h-4')} />
+          </a>
+          <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-amber-500/20 flex items-center justify-center text-white/50 hover:text-amber-400 transition-all duration-300" aria-label="LinkedIn">
+            <Fragment set:html={linkedinIcon('w-4 h-4')} />
+          </a>
+          <a href={LINKS.github} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-amber-500/20 flex items-center justify-center text-white/50 hover:text-amber-400 transition-all duration-300" aria-label="GitHub">
+            <Fragment set:html={githubIcon('w-4 h-4')} />
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xs font-bold tracking-[0.15em] uppercase text-white/50 mb-5">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="#services" class="text-white/60 hover:text-amber-400 transition-colors text-sm">Services</a></li>
+          <li><a href="#products" class="text-white/60 hover:text-amber-400 transition-colors text-sm">Our Work</a></li>
+          <li><a href="#about" class="text-white/60 hover:text-amber-400 transition-colors text-sm">About</a></li>
+          <li><a href="#contact" class="text-white/60 hover:text-amber-400 transition-colors text-sm">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-xs font-bold tracking-[0.15em] uppercase text-white/50 mb-5">Get in Touch</h3>
+        <div class="space-y-3 text-sm">
+          <p><a href="mailto:contact@dattam.in" class="text-white/60 hover:text-amber-400 transition-colors">contact@dattam.in</a></p>
+          <p class="text-white/60 leading-relaxed">Awfis, Prestige Skytech, Financial District, Nanakramguda, Telangana 500032</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+      <p>&copy; {new Date().getFullYear()} Dattam Labs. All rights reserved.</p>
+      <a href="/privacy-policy" class="hover:text-amber-400 transition-colors">Privacy Policy</a>
+    </div>
+  </div>
+</footer>

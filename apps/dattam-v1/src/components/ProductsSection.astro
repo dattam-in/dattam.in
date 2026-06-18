@@ -1,0 +1,58 @@
+---
+const products = [
+  {
+    name: 'Assetly',
+    url: 'https://assetlyhq.com',
+    desc: 'A property management platform helping Indian expats manage their real estate assets in India with clarity and confidence.',
+    tag: 'SaaS Platform',
+    gradient: 'from-amber-500 to-orange-500',
+  },
+  {
+    name: 'CR Atlas',
+    url: 'https://cr-atlas.tools.ceew.co.in/',
+    desc: 'An interactive atlas tool with agentic data analysis for exploring climate risk data across India, built in collaboration with CEEW.',
+    tag: 'Agentic AI + Data Viz',
+    gradient: 'from-emerald-500 to-teal-500',
+  },
+  {
+    name: 'ERAS',
+    url: 'https://tnclimatetracker.tn.gov.in/eras',
+    desc: 'Emissions Reduction Assessment System built for the Government of Tamil Nadu to track and analyze climate action progress.',
+    tag: 'Government',
+    gradient: 'from-blue-500 to-indigo-500',
+  },
+];
+---
+
+<section id="products" class="py-28 px-6 bg-gray-50 scroll-mt-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="section-label mb-4 inline-block">What We've Built</span>
+      <h2 class="section-heading mb-5">Our Work</h2>
+      <p class="text-lg text-gray-500 max-w-xl mx-auto">Products and platforms we've designed, built, and shipped</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {products.map((product) => (
+        <a href={product.url} target="_blank" rel="noopener noreferrer" class="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 hover:-translate-y-1">
+          <!-- Gradient top bar -->
+          <div class={`h-1.5 bg-gradient-to-r ${product.gradient}`}></div>
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="text-xs font-bold tracking-wider uppercase text-gray-500">{product.tag}</span>
+                <h3 class="text-2xl font-bold mt-1 group-hover:text-amber-600 transition-colors duration-300" style="font-family: 'Outfit', sans-serif;">{product.name}</h3>
+              </div>
+              <div class="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-amber-50 flex items-center justify-center transition-colors duration-300">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-amber-600 transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-500 leading-relaxed">{product.desc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

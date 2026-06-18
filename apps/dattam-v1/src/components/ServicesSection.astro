@@ -1,0 +1,66 @@
+---
+import { chartBarIcon, brainIcon, cloudIcon, codeIcon } from '../icons';
+
+const services = [
+  {
+    title: 'Open Data Datasets',
+    desc: 'We build and curate open data datasets, making public data accessible, clean, and ready for analysis. From collection and transformation to publishing, we help organizations unlock the value of open data.',
+    icon: chartBarIcon,
+    bgColor: 'bg-blue-50',
+    textColor: 'text-blue-600',
+    borderColor: 'border-blue-100',
+    num: '01',
+  },
+  {
+    title: 'Agentic AI Tools',
+    desc: 'We build agentic AI tools powered by LLMs and information retrieval systems that help organizations make sense of complex data. Our tools provide intuitive interfaces for users to interact with and extract insights from structured and unstructured data.',
+    icon: brainIcon,
+    bgColor: 'bg-purple-50',
+    textColor: 'text-purple-600',
+    borderColor: 'border-purple-100',
+    num: '02',
+  },
+  {
+    title: 'Data Analysis & Visualization',
+    desc: 'We help organizations analyze and visualize data to uncover patterns, trends, and actionable insights. From interactive dashboards to custom reporting tools, we turn raw data into clear, compelling stories.',
+    icon: codeIcon,
+    bgColor: 'bg-emerald-50',
+    textColor: 'text-emerald-600',
+    borderColor: 'border-emerald-100',
+    num: '03',
+  },
+  {
+    title: 'DevOps Services',
+    desc: 'Transform your development process with automated pipelines, continuous integration, and continuous deployment. We optimize cloud architecture to be performant, resilient, and cost-effective.',
+    icon: cloudIcon,
+    bgColor: 'bg-amber-50',
+    textColor: 'text-amber-600',
+    borderColor: 'border-amber-100',
+    num: '04',
+  },
+];
+---
+
+<section id="services" class="py-28 px-6 bg-gray-50 scroll-mt-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <span class="section-label mb-4 inline-block">What We Do</span>
+      <h2 class="section-heading text-gray-900 mb-5">Our Services</h2>
+      <p class="text-lg text-gray-500 max-w-xl mx-auto">We bring expertise across the full spectrum of modern technology solutions</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      {services.map((service) => (
+        <div class={`group relative bg-white border ${service.borderColor} rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1`}>
+          <span class="absolute top-6 right-8 text-6xl font-extrabold text-gray-100 select-none" style="font-family: 'Outfit', sans-serif;">{service.num}</span>
+
+          <div class={`relative w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-6`}>
+            <Fragment set:html={service.icon(`w-7 h-7 ${service.textColor}`)} />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{service.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

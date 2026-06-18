@@ -1,0 +1,66 @@
+---
+import { SITE_URL } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ProductsSection from '../components/ProductsSection.astro';
+import ClientsSection from '../components/ClientsSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Dattam Labs',
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      email: 'contact@dattam.in',
+      description: 'Dattam Labs builds agentic AI tools, open data datasets, data visualizations, and scalable cloud infrastructure for organizations worldwide.',
+      foundingDate: '2022',
+      sameAs: [
+        'https://www.linkedin.com/company/dattam-in',
+        'https://github.com/dattam-in',
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Awfis, Prestige Skytech, ISB Rd, Financial District, Nanakramguda',
+        addressLocality: 'Hyderabad',
+        addressRegion: 'Telangana',
+        postalCode: '500032',
+        addressCountry: 'IN',
+      },
+      knowsAbout: [
+        'Agentic AI',
+        'Open Data',
+        'Data Visualization',
+        'DevOps',
+        'LLM Applications',
+        'Cloud Native Solutions',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Dattam Labs',
+      url: SITE_URL,
+    },
+  ],
+};
+---
+
+<BaseLayout title="Dattam Labs — Data-driven IT Solutions">
+  <Header />
+  <main>
+    <Hero />
+    <ServicesSection />
+    <ProductsSection />
+    <AboutSection />
+    <ClientsSection />
+    <ContactSection />
+  </main>
+  <Footer />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>
