@@ -1,51 +1,43 @@
-import { cn } from "@dattam/ui/cn";
 import { siteConfig } from "@/lib/site";
+import { cn } from "@dattam/ui/cn";
+import Image from "next/image";
 
 export function Logo({
   className,
-  withWordmark = true,
+  variant = "mark",
 }: {
   className?: string;
-  withWordmark?: boolean;
+  /** mark = icon only (header), full = full logo with text (footer) */
+  variant?: "mark" | "full";
 }) {
-  return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <span className="relative inline-flex size-8 items-center justify-center">
-        <svg
-          viewBox="0 0 32 32"
-          fill="none"
-          className="size-8"
-          aria-hidden
-        >
-          <rect
-            x="1"
-            y="1"
-            width="30"
-            height="30"
-            rx="9"
-            stroke="url(#dg)"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M10 9h6.5c4 0 7 3 7 7s-3 7-7 7H10V9Z"
-            stroke="url(#dg)"
-            strokeWidth="2"
-            strokeLinejoin="round"
-          />
-          <circle cx="16" cy="16" r="2.4" fill="var(--color-accent)" />
-          <defs>
-            <linearGradient id="dg" x1="2" y1="2" x2="30" y2="30">
-              <stop stopColor="var(--color-accent)" />
-              <stop offset="1" stopColor="var(--color-cyan)" />
-            </linearGradient>
-          </defs>
-        </svg>
+  if (variant === "full") {
+    return (
+      <span className={cn("inline-flex items-center", className)}>
+        <Image
+          src="/logo.png"
+          alt={siteConfig.name}
+          width={120}
+          height={120}
+          className="h-28 w-auto"
+          unoptimized
+        />
       </span>
-      {withWordmark && (
-        <span className="text-lg font-semibold tracking-tight text-foreground">
-          {siteConfig.name}
-        </span>
-      )}
+    );
+  }
+
+  return (
+    <span className={cn("inline-flex items-center gap-2", className)}>
+      <Image
+        src="/logo-mark.png"
+        alt={siteConfig.name}
+        width={324}
+        height={219}
+        className="block h-6 w-auto"
+        unoptimized
+      />
+      <span className="text-base font-semibold pt-1 text-foreground">
+        Dattam LABS
+      </span>
     </span>
   );
 }

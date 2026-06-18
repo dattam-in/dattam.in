@@ -12,7 +12,7 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
           <div className="flex flex-col gap-5">
-            <Logo />
+            <Logo variant="full" />
             <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
               An engineering studio building scalable digital products — from
               idea to production-grade platforms.
@@ -96,7 +96,15 @@ export function Footer() {
             © {new Date().getFullYear()} {siteConfig.legalName}. All rights
             reserved.
           </p>
-          <p>Engineered with precision in Hyderabad, India.</p>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/privacy-policy"
+              className="transition-colors hover:text-foreground"
+            >
+              Privacy Policy
+            </Link>
+            <p>Engineered with precision in Hyderabad, India.</p>
+          </div>
         </div>
       </Container>
     </footer>
