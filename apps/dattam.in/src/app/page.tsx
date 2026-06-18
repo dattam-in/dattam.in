@@ -8,10 +8,53 @@ import { Stats } from "@/components/sections/stats";
 import { Testimonials } from "@/modules/home/testimonials";
 import { Team } from "@/modules/about/team";
 import { CTA } from "@/components/sections/cta";
+import { siteConfig } from "@/lib/site";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/logo.png`,
+      email: siteConfig.email,
+      description: siteConfig.description,
+      foundingDate: "2022",
+      sameAs: [siteConfig.socials.linkedin, siteConfig.socials.github],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress:
+          "Awfis, Prestige Skytech, ISB Rd, Financial District, Nanakramguda",
+        addressLocality: "Hyderabad",
+        addressRegion: "Telangana",
+        postalCode: "500032",
+        addressCountry: "IN",
+      },
+      knowsAbout: [
+        "Agentic AI",
+        "Open Data",
+        "Data Visualization",
+        "DevOps",
+        "LLM Applications",
+        "Cloud Native Solutions",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: siteConfig.legalName,
+      url: siteConfig.url,
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <TrustStrip />
       <Services />
