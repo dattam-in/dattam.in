@@ -316,12 +316,12 @@ export const projects: Project[] = [
       {
         title: "Services and payments, built in",
         description:
-          "Order title checks and legal help and pay securely online — and sign in with a passkey, no passwords.",
+          "Order title checks and legal help and pay securely online — and sign in with a passkey for password-free access.",
       },
     ],
     timeline: [
       { phase: "Discovery", detail: "Mapped the NRI ownership journey and the trust gaps in managing property remotely." },
-      { phase: "Architecture", detail: "Turborepo monorepo — Next.js frontend, FastAPI backend, async PostgreSQL with row-level multi-tenancy." },
+      { phase: "Architecture", detail: "Turborepo monorepo — Next.js frontend, FastAPI backend, async PostgreSQL with org-scoped multi-tenancy." },
       { phase: "Build", detail: "Shipped assets, documents, services, and the land-record scrapers in tight, reviewed loops." },
       { phase: "Launch & scale", detail: "Dockerised on AWS EC2 (ARM64) with Redis/Taskiq workers; frontend on Amplify + CloudFront." },
     ],
@@ -329,16 +329,16 @@ export const projects: Project[] = [
       "Assetly lets people manage property in India from anywhere in the world — verify ownership, find family land, keep documents in one place, and order trusted services, all online. No flying back, no chasing local agents.",
     stack: ["Next.js", "React", "Tailwind", "FastAPI", "PostgreSQL", "Redis", "Razorpay", "AWS"],
     metrics: [
-      { value: "3", label: "States integrated (TN·TS·AP)" },
+      { value: "2", label: "States integrated (TS·AP)" },
       { value: "40+", label: "Document types" },
-      { value: "28+", label: "Services offered" },
+      { value: "7", label: "On-demand services" },
     ],
     problem:
       "Indians living abroad had no reliable way to manage property back home. Ownership records were scattered across government portals, documents lived in WhatsApp and email, and everything depended on local agents they couldn't easily trust.",
     vision:
       "Make owning Indian property from abroad feel simple and safe — one place to check records, store documents, get expert help, and see exactly what's happening.",
     architecture:
-      "Assetly is one connected system: a fast web app, a Python backend, and a secure database, all running on AWS. Behind the scenes, automated workers safely pull records from government land portals, and AI (Google Gemini and Claude) reads and explains documents. It's engineered to stay fast and reliable as more owners come on board.",
+      "Assetly is one connected system: a fast web app, a Python backend, and a secure database, all running on AWS. Behind the scenes, automated workers safely pull records from government land portals, and Google Gemini reads and explains documents. It's engineered to stay fast and reliable as more owners come on board.",
     challenges: [
       "Pulling records from government land portals that are slow, inconsistent, and protected by one-time passwords.",
       "Keeping every owner's data completely separate and private.",
@@ -398,11 +398,11 @@ export const projects: Project[] = [
     ],
     summary:
       "CRAVIS turns dense climate data into plain answers. Anyone — a policymaker, journalist, or researcher — can ask a question in everyday language and get clear charts, maps, and tables, each backed by trusted sources. Built with CEEW.",
-    stack: ["Next.js", "FastAPI", "AWS Athena", "Mapbox GL", "Google ADK", "Claude", "PostgreSQL", "DuckDB"],
+    stack: ["Next.js", "FastAPI", "AWS Athena", "Mapbox GL", "Google ADK", "OpenAI", "Claude", "PostgreSQL", "DuckDB"],
     metrics: [
       { value: "45yr", label: "Climate record (1980–2024)" },
-      { value: "750+", label: "Districts covered" },
-      { value: "5", label: "Hazard indices" },
+      { value: "734", label: "Districts covered" },
+      { value: "6", label: "Hazard indices" },
     ],
     problem:
       "India's climate data was spread across disconnected files and portals — history in one place, future projections in another. Getting a clear, trustworthy answer took days of digging, and only experts could do it.",
@@ -464,7 +464,7 @@ export const projects: Project[] = [
       { phase: "Discovery", detail: "Worked with CEEW and TNGCC on the accounting methodology and what the council needs to see." },
       { phase: "Data model", detail: "Structured multi-sector emissions and baseline data as typed JSON." },
       { phase: "Build", detail: "Six sector dashboards in Next.js + MUI + Recharts, with year and baseline controls." },
-      { phase: "Ship", detail: "A static, embeddable build for the Tamil Nadu government." },
+      { phase: "Ship", detail: "An embeddable, iframe-ready build for the Tamil Nadu government." },
     ],
     summary:
       "ERAS shows the Tamil Nadu government how the state is doing on climate — tracking greenhouse-gas emissions across every major sector and the reductions its policies have achieved, all on the path to net zero before 2070. Built with CEEW.",
