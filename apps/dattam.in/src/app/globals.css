@@ -3,6 +3,10 @@
 /* Scan the shared UI package source so its utility classes are generated. */
 @source "../../../../packages/ui/src/**/*.{ts,tsx}";
 
+/* next-themes sets a `.dark` class — make `dark:` utilities follow it
+   instead of Tailwind v4's default prefers-color-scheme media query. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*
  * Dattam — Datum Grid theme.
  * Semantic color tokens resolve through theme vars so light/dark can swap

@@ -11,8 +11,8 @@ export const siteConfig = {
   address:
     "Awfis, Prestige Skytech, ISB Road, Financial District, Nanakramguda, Telangana 500032",
   socials: {
-    linkedin: "https://www.linkedin.com/company/dattam-labs",
-    github: "https://github.com/dattam-labs",
+    linkedin: "https://www.linkedin.com/company/dattam-in",
+    github: "https://github.com/dattam-in",
   },
 } as const;
 
