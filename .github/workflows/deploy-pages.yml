@@ -15,11 +15,12 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-# Prod repo serves the apex domain (no basePath, keep CNAME).
-# Any other repo (e.g. the himohitmehta/dattam test env) serves from a
-# project-page subpath, so build with basePath and drop the CNAME.
-env:
-  PROD_REPO: dattam-in/dattam.in
+# Prod repo (dattam-in/dattam.in) serves the apex domain: no basePath,
+# keep CNAME. Any other repo (e.g. the himohitmehta/dattam test env) serves
+# from a project-page subpath, so build with basePath and drop the CNAME.
+# NOTE: compare against the literal repo slug — the `env` context does not
+# resolve inside the `${{ }}` used for a step's env, which previously made
+# the prod check fail and wrongly applied a "/dattam.in" basePath.
 
 jobs:
   build:
@@ -40,10 +41,10 @@ jobs:
         run: pnpm --filter @dattam/web build
         env:
           # "/<repo-name>" on test repos, "" on the prod apex domain.
-          PAGES_BASE_PATH: ${{ github.repository == env.PROD_REPO && '' || format('/{0}', github.event.repository.name) }}
+          PAGES_BASE_PATH: ${{ github.repository == 'dattam-in/dattam.in' && '' || format('/{0}', github.event.repository.name) }}
 
       - name: Drop CNAME on non-prod repos
-        if: github.repository != env.PROD_REPO
+        if: github.repository != 'dattam-in/dattam.in'
         run: rm -f apps/dattam.in/out/CNAME
 
       - uses: actions/upload-pages-artifact@v3
