@@ -83,6 +83,22 @@ export const services: Service[] = [
   },
 ];
 
+export interface Client {
+  name: string;
+  logo: string;
+  url: string;
+}
+
+export const clients: Client[] = [
+  { name: "Chartr", logo: "/clients/chartr_logo.jpg", url: "https://chartr.in/" },
+  { name: "Pradhi", logo: "/clients/pradhilogo.jpg", url: "https://pradhi.ai/" },
+  { name: "CEEW", logo: "/clients/ceewlogo.jpg", url: "https://www.ceew.in/" },
+  { name: "StarTech365", logo: "/clients/startechlogo.png", url: "https://startech365.net/" },
+  { name: "Crowd Power Ventures", logo: "/clients/crowdpower.svg", url: "https://www.crowd-power-ventures.com/" },
+  { name: "AeroLeads", logo: "/clients/aeroleads.png", url: "https://aeroleads.com/" },
+  { name: "Teachally", logo: "/clients/teachally.png", url: "https://teachally.com/" },
+];
+
 export interface TrustItem {
   label: string;
 }

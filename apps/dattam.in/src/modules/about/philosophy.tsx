@@ -18,7 +18,7 @@ export function Philosophy() {
         <div className="relative pt-4">
           <RuleDraw />
           <span className="mono-coord absolute -top-1 left-0 flex gap-2 bg-background pr-4">
-            <span className="text-accent">§04</span>
+            <span className="text-accent">§05</span>
             <span>Philosophy</span>
           </span>
         </div>
