@@ -5,8 +5,6 @@ import { FeaturedProjects } from "@/modules/home/featured-projects";
 import { Process } from "@/modules/home/process";
 import { Philosophy } from "@/modules/about/philosophy";
 import { Stats } from "@/components/sections/stats";
-import { Testimonials } from "@/modules/home/testimonials";
-import { Team } from "@/modules/about/team";
 import { CTA } from "@/components/sections/cta";
 import { siteConfig } from "@/lib/site";
 
@@ -62,8 +60,6 @@ export default function Home() {
       <Process />
       <Philosophy />
       <Stats />
-      <Testimonials />
-      <Team />
       <CTA />
     </>
   );

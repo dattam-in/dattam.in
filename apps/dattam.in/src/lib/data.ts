@@ -22,9 +22,8 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { value: "4+", label: "Years building" },
-  { value: "10+", label: "Products shipped" },
+  { value: "10+", label: "Projects delivered" },
   { value: "7", label: "Trusted clients" },
-  { value: "99.9%", label: "Uptime delivered" },
 ];
 
 export interface Service {

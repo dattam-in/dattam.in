@@ -3,7 +3,6 @@ import { Container } from "@/components/layout/container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Reveal } from "@/components/motion/reveal";
 import { Philosophy } from "@/modules/about/philosophy";
-import { Team } from "@/modules/about/team";
 import { Process } from "@/modules/home/process";
 import { Stats } from "@/components/sections/stats";
 import { CTA } from "@/components/sections/cta";
@@ -59,7 +58,6 @@ export default function AboutPage() {
       <Stats />
       <Philosophy />
       <Process />
-      <Team />
       <CTA
         title="Want to build with us?"
         description="We're selective about the work we take on. If you're building something ambitious, let's talk."
