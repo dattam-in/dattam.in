@@ -41,7 +41,11 @@ jobs:
         run: pnpm --filter @dattam/web build
         env:
           # "/<repo-name>" on test repos, "" on the prod apex domain.
-          PAGES_BASE_PATH: ${{ github.repository == 'dattam-in/dattam.in' && '' || format('/{0}', github.event.repository.name) }}
+          # Condition is inverted so the truthy branch holds the NON-empty
+          # value: `A && '' || B` returns B when prod matches because '' is
+          # falsy (GitHub Actions ternary trap). Put the basePath in the
+          # truthy branch instead.
+          PAGES_BASE_PATH: ${{ github.repository != 'dattam-in/dattam.in' && format('/{0}', github.event.repository.name) || '' }}
 
       - name: Drop CNAME on non-prod repos
         if: github.repository != 'dattam-in/dattam.in'
