@@ -13,7 +13,7 @@ export function Services() {
           index="§01"
           eyebrow="Capabilities"
           title="Engineering partners across your product"
-          description="From a first prototype to a platform at scale, we bring the design and engineering to build it right — and the discipline to keep it reliable."
+          description="From a first prototype to a platform at scale, we bring the design and engineering to build it well, plus the discipline to keep it running."
         />
 
         <RegisterGroup className="mt-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

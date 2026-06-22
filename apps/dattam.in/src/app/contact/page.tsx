@@ -41,7 +41,7 @@ export default function ContactPage() {
             <Reveal delay={2}>
               <p className="mt-5 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
                 Tell us about your product and what success looks like. We&apos;ll
-                come back with how we&apos;d architect, design, and ship it — and a
+                come back with how we&apos;d architect, design, and ship it, plus a
                 clear next step. No obligation.
               </p>
             </Reveal>

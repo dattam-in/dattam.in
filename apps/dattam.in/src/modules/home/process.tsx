@@ -12,7 +12,7 @@ export function Process() {
           index="§03"
           eyebrow="How we work"
           title="An extension of your team"
-          description="Clear communication, tight feedback loops, and no black boxes — from kickoff to launch and beyond."
+          description="Clear communication, tight feedback loops, no black boxes. From kickoff through launch and the work that comes after."
         />
 
         <RegisterGroup className="mt-16">

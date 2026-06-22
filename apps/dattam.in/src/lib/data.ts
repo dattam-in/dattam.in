@@ -37,7 +37,7 @@ export const services: Service[] = [
     icon: Boxes,
     title: "SaaS Platforms",
     description:
-      "Multi-tenant products with billing, auth, and roles — architected to scale from first user to enterprise.",
+      "Multi-tenant products with billing, auth, and roles, built to scale from your first user to enterprise.",
   },
   {
     icon: BrainCircuit,
@@ -55,13 +55,13 @@ export const services: Service[] = [
     icon: Database,
     title: "Open Data Products",
     description:
-      "Collection, transformation, and publishing of accessible public datasets with rigorous pipelines.",
+      "Public datasets collected, cleaned, and published through pipelines you can audit.",
   },
   {
     icon: Cloud,
     title: "Cloud Infrastructure",
     description:
-      "Cloud-native architecture, CI/CD, and IaC tuned for cost, resilience, and zero-downtime deploys.",
+      "Cloud-native architecture with CI/CD and infrastructure-as-code, tuned for cost and zero-downtime deploys.",
   },
   {
     icon: Workflow,
@@ -155,7 +155,7 @@ export const process: ProcessStep[] = [
     step: "03",
     title: "Product Design",
     description:
-      "Interfaces and flows designed for clarity, speed, and a premium first impression.",
+      "Interfaces and flows designed to be clear and fast, with a first impression that earns trust.",
   },
   {
     icon: Code2,
@@ -246,7 +246,7 @@ export const team: TeamMember[] = [
   {
     name: "Product Designer",
     role: "Interface & Experience",
-    bio: "Turns complex workflows into interfaces that feel obvious, fast, and premium.",
+    bio: "Turns complex workflows into interfaces that feel obvious and fast.",
     initials: "PD",
   },
   {
@@ -300,7 +300,7 @@ export const projects: Project[] = [
   {
     slug: "assetly",
     name: "Assetly",
-    tagline: "Property management, reimagined for global Indians.",
+    tagline: "Manage property back home from anywhere in the world.",
     category: "SaaS Platform",
     year: "2026",
     accent: "oklch(0.62 0.19 258)",
@@ -370,7 +370,7 @@ export const projects: Project[] = [
   {
     slug: "cr-atlas",
     name: "CRAVIS.AI",
-    tagline: "Democratising climate data intelligence.",
+    tagline: "Climate data you can just ask a question of.",
     category: "Agentic AI · Data Product",
     year: "2026",
     accent: "oklch(0.78 0.14 165)",
@@ -436,7 +436,7 @@ export const projects: Project[] = [
       "Earlier results are reused within a conversation to avoid repeating slow queries.",
     ],
     outcome:
-      "CRAVIS turns days of data wrangling into a single question and a trustworthy answer — giving decision-makers a clear window into climate risk.",
+      "CRAVIS turns days of data wrangling into one question and an answer you can cite. Decision-makers get a clear read on climate risk.",
   },
   {
     slug: "eras",

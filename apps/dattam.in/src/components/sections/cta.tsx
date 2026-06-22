@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 
 export function CTA({
   title = "Have a product to build?",
-  description = "Tell us what you're building. We'll show you how we'd architect, design, and ship it — and exactly what it's like to work with us. First reply within one business day.",
+  description = "Tell us what you're building. We'll show you how we'd architect, design, and ship it, and what it's actually like to work with us. First reply within one business day.",
 }: {
   title?: string;
   description?: string;

@@ -17,7 +17,7 @@ export function FeaturedProjects() {
           index="§02"
           eyebrow="Selected work"
           title="Case studies from real engagements"
-          description="Products we've designed, built, and operate with our clients — measured by what they ship."
+          description="Products we designed, built, and still run alongside our clients."
         />
         <div className="mt-20 flex flex-col gap-24 lg:gap-28">
           {projects.map((p, i) => (

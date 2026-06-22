@@ -14,8 +14,8 @@ export function Footer() {
           <div className="flex flex-col gap-5">
             <Logo variant="full" />
             <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-              An engineering studio building scalable digital products — from
-              idea to production-grade platforms.
+              An engineering studio building scalable digital products, from
+              first idea to the platform you run in production.
             </p>
             <div className="flex items-center gap-3">
               <Link
@@ -103,7 +103,7 @@ export function Footer() {
             >
               Privacy Policy
             </Link>
-            <p>Engineered with precision in Hyderabad, India.</p>
+            <p>Built in Hyderabad, India.</p>
           </div>
         </div>
       </Container>

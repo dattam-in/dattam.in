@@ -45,9 +45,9 @@ export function Hero() {
 
               <p className="mt-9 max-w-[52ch] text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Dattam is a product engineering studio. Founders and
-                organizations bring us their hardest software problems — and we
-                design, build, and operate the systems that solve them.
-                Structured, measured, and built to last.
+                organizations bring us their hardest software problems, and we
+                design, build, and run the systems that solve them — the kind
+                that hold up once real users show up.
               </p>
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">

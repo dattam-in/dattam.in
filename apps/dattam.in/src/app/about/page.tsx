@@ -27,27 +27,27 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal>
               <h2 className="text-balance text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl">
-                We exist to build software that organizations can trust with
-                their most important data and decisions.
+                We build software that organizations can trust with their most
+                important data and decisions.
               </h2>
             </Reveal>
             <Reveal delay={1}>
               <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
                 <p>
-                  We build agentic AI applications that help organizations
-                  interact with complex data in natural, intuitive ways —
-                  combining large language models with information retrieval for
-                  production-grade systems.
+                  We build agentic AI applications that let organizations work
+                  with complex data in plain language. Under the hood, large
+                  language models do the reasoning and retrieval keeps the
+                  answers grounded in real sources.
                 </p>
                 <p>
-                  Beyond AI, we ship the full picture: multi-tenant SaaS
+                  It doesn&apos;t stop at AI. We also ship the multi-tenant SaaS
                   platforms, interactive data products, and the cloud
-                  infrastructure that keeps them fast, secure, and always on.
+                  infrastructure that keeps all of it fast and reliable.
                 </p>
                 <p>
-                  Small senior team, high engineering bar, and a track record of
-                  systems running reliably in production — from startups to
-                  government-scale deployments.
+                  We&apos;re a small, senior team. The systems we&apos;ve shipped
+                  run reliably in production for clients that range from early
+                  startups to government-scale deployments.
                 </p>
               </div>
             </Reveal>
