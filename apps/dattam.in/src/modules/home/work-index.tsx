@@ -14,6 +14,7 @@ const rows = [
     tag: "Open Data",
     x: "x:04",
   },
+  { slug: "entiva", name: "Entiva", year: "2026", tag: "SaaS · Data", x: "x:05" },
 ];
 
 export function WorkIndex() {
@@ -21,7 +22,7 @@ export function WorkIndex() {
     <div className="flex flex-col">
       <div className="flex items-center justify-between">
         <span className="mono-coord">Selected work</span>
-        <span className="mono-coord">04</span>
+        <span className="mono-coord">05</span>
       </div>
       <RuleDraw className="mt-3" />
 

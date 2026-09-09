@@ -22,7 +22,7 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { value: "4+", label: "Years building" },
-  { value: "10+", label: "Projects delivered" },
+  { value: "11+", label: "Projects delivered" },
   { value: "7", label: "Trusted clients" },
 ];
 
@@ -573,6 +573,77 @@ export const projects: Project[] = [
     ],
     outcome:
       "A free, AWS-hosted corpus of Indian Supreme Court judgments (1950–2025) that anyone can query or train on — listed on the AWS Open Data Registry and maintained by Dattam.",
+  },
+  {
+    slug: "entiva",
+    name: "Entiva",
+    tagline: "Know any Indian company, from its own filings.",
+    category: "SaaS · Data Product",
+    year: "2026",
+    accent: "oklch(0.72 0.13 85)",
+    image: "/projects/entiva/home.jpg",
+    siteUrl: "entiva.in",
+    role: "Product design + full-stack engineering",
+    gallery: [
+      "/projects/entiva/home.jpg",
+      "/projects/entiva/what-you-can-find.jpg",
+      "/projects/entiva/how-it-works.jpg",
+    ],
+    features: [
+      {
+        title: "Look up any company, free",
+        description:
+          "Legal name, CIN, status, incorporation date, and state for 3.6 million Indian companies and LLPs. No account needed — and a company showing 'struck off' no longer legally exists, whatever its website says.",
+      },
+      {
+        title: "The filings behind the answer",
+        description:
+          "What it earns, who runs it, who owns it, what it owes. All eight document categories the registry publishes, ordered for up to ten companies at once.",
+      },
+      {
+        title: "Every file verified",
+        description:
+          "Documents arrive from the registry as encoded archives. Entiva checks the bytes, extracts them, validates each PDF, and publishes a SHA-256 inventory so you can prove what you hold.",
+      },
+      {
+        title: "One payment attempt, ever",
+        description:
+          "You authorise the registry fee yourself in your own UPI app. A crash or an ambiguous gateway response can never open a second charge.",
+      },
+    ],
+    timeline: [
+      { phase: "Discovery", detail: "Mapped the registry's public-documents flow and the questions diligence teams actually need answered." },
+      { phase: "Architecture", detail: "Astro landing site, Next.js application, and a Python core running the retrieval engine, API, and workers." },
+      { phase: "Build", detail: "Shipped the free register lookup, the ordering and payment flow, and resumable retrieval across all eight categories." },
+      { phase: "Launch", detail: "Live at entiva.in on AWS, with the signed-in application at app.entiva.in." },
+    ],
+    summary:
+      "Entiva answers questions about Indian companies from the companies register itself. Look up any of 3.6 million companies and LLPs for free, then order the actual filings behind the answer — retrieved from the MCA, verified file by file, and delivered as readable PDFs with a checksum for every document.",
+    stack: ["Next.js", "React", "Astro", "Tailwind", "FastAPI", "PostgreSQL", "Redis", "Playwright", "Docling", "AWS"],
+    metrics: [
+      { value: "3.6M", label: "Companies & LLPs searchable" },
+      { value: "8", label: "Document categories retrieved" },
+      { value: "10", label: "Companies per order" },
+    ],
+    problem:
+      "The answers people want about an Indian company — what it earns, who sits on its board, whether it has pledged its assets — are already public. They sit in the registry's own filings. But getting them means working a slow government portal through logins, one-time passwords, CAPTCHAs, a payment flow, and a three-hour download window. So most people give up and rely on third-party databases that retype the numbers and can't show you the document.",
+    vision:
+      "Ask a question about any Indian company and get an answer you can cite — with the filing it came from in your hands.",
+    architecture:
+      "Entiva is a public site, a signed-in web app, and a Python engine that does the hard part. When you place an order, the engine works the registry's portal on your behalf: it logs in, finds the company, prepares one payment for you to authorise by UPI, then walks all eight document categories in resumable batches. Every archive is checked, every PDF validated, and every file hashed before it reaches you. Long-running work happens in the background, so the app stays responsive while an order is still with the registry.",
+    challenges: [
+      "Driving a government portal that is slow and inconsistent, and guarded by one-time passwords and CAPTCHAs.",
+      "Making payment safe when the gateway can fail ambiguously — the system must never risk charging twice.",
+      "Turning scanned and digitally filed documents alike into text an agent can search, without losing what the original said.",
+    ],
+    optimizations: [
+      "Every retrieval resumes exactly where it stopped, so an interrupted order never restarts or re-pays.",
+      "All document manifests are saved before the first download, preserving the registry's three-hour window.",
+      "Extraction runs a fast native pass first and falls back to OCR only for documents that need it.",
+      "Document structure is stored columnar rather than as JSON — 38x smaller on a real annual return, and queryable across the whole corpus.",
+    ],
+    outcome:
+      "Entiva turns a day of portal work into one order. Diligence, research, and credit teams get the primary record — verified, indexed, and citable — instead of a number someone else retyped.",
   },
 ];
 
